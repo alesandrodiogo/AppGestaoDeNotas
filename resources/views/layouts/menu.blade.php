@@ -115,7 +115,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="administracao.html" class="nav-link">
+            <a href="/administracao" class="nav-link">
               <i class="nav-icon fas fa-toolbox"></i>
               <p>Gestão Administrativa
               </p>

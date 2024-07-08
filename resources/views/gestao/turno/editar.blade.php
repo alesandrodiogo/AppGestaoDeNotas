@@ -1,5 +1,8 @@
- <div class="wrapper">
-  <%- include('../../partials/navbar'); %>
+@extends('layouts.main')
+@section('title','Editar turno')
+@section('content')
+<div class="wrapper">
+
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -29,8 +32,8 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputName1">Descrição</label>
-                          <input type="text" name="descricao" value="<%=updateturma.descricao %>" class="form-control" id="exampleInputName1" placeholder="Descrição">
-                          <input type="hidden" name="id" value="<%=updateturma.id %>">
+                          <input type="text" name="descricao" value="" class="form-control" id="exampleInputName1" placeholder="Descrição">
+                          <input type="hidden" name="id" value="">
                   </div>
                 </div>
                 <!-- /.col -->          
@@ -59,19 +62,9 @@
 </div>
   <!-- /.content-wrapper -->
 
-    
-
-
-
-
+ 
   </div>
   <!-- /.content-wrapper -->
-
-
-
-
-
-
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -80,8 +73,8 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
+@endsection
 
 

@@ -20,7 +20,7 @@
       <div class="container-fluid">
         <!-- Info boxes -->
        <div class="row">
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-8 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
@@ -34,7 +34,7 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-8 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">

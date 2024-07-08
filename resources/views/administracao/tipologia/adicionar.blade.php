@@ -1,7 +1,7 @@
-<div class="wrapper">
-  <%- include('../../partials/navbar'); %>
-   
-
+@extends('layouts.main')
+@section('title','Adicionar tipologia')
+@section('content')
+  <div class="wrapper">
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
   <div class="card-header">
@@ -13,7 +13,7 @@
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Dados</h3>
+            <h3 class="card-title">Tipologia</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -23,15 +23,13 @@
             </div>
           </div>
           <!-- /.card-header -->
-          <form action="/gestao/turma/add" method="POST">
-            <!-- /.card-header -->
+          <form action="/admin/tipologia/add" method="POST">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputName1">Descrição</label>
-                          <input type="text" name="descricao" class="form-control" id="exampleInputName1" placeholder="Descrição"> 
-                          <%- include('../../partials/msg'); %>  
+                          <input type="text" name="descricao" class="form-control" id="exampleInputName1" placeholder="Descrição">
                   </div>
                 </div>
                 <!-- /.col -->          
@@ -44,37 +42,16 @@
               <!-- /.row -->
              </div>
             </div>
-            <!-- /.card-body -->
-           
           </form>
-          <!-- /.card-body -->
-       
-        </div>
+            <!-- /.card-body -->
+      </div>
          <!-- /.row 1-->
          
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
-
-
-</div>
-
-</div>
-  <!-- /.content-wrapper -->
-
-    
-
-
-
-
   </div>
   <!-- /.content-wrapper -->
-
-
-
-
-
-
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -83,9 +60,6 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
-
-
-
+ @endsection

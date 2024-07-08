@@ -95,7 +95,7 @@
             <div class="icon">
                <i class="fa5 fa-building"></i>
             </div>
-            <a href="paginas/gestao/turma/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/turmas" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -110,7 +110,7 @@
             <div class="icon">
               <i class="fas fa-school"></i>
             </div>
-            <a href="paginas/administracao/escola/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/escolas" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -125,7 +125,7 @@
             <div class="icon">
              <i class="fa5 fa-building"></i>
             </div>
-            <a href="paginas/gestao/sala/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/salas" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -162,7 +162,7 @@
             <div class="icon">
                <i class="fa5 fa-building"></i>
             </div>
-            <a href="paginas/gestao/turno/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/turnos" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -177,7 +177,7 @@
             <div class="icon">
              <i class="fa5 fa-building"></i>
             </div>
-            <a href="paginas/gestao/ano_lectivo/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/ano_lectivo" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

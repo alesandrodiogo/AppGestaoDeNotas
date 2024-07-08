@@ -1,11 +1,13 @@
- <div class="wrapper">
-  <%- include('../../partials/navbar'); %>
- 
+@extends('layouts.main')
+@section('title','Adicionar sala')
+@section('content')
+<div class="wrapper">
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
   <div class="card-header">
-  <h3 class="title"> Actualizar </h3>
+  <h3 class="title"> Adicionar </h3>
   </div>
         <!-- Main content -->
     <section class="content">
@@ -93,19 +95,8 @@
 </div>
   <!-- /.content-wrapper -->
 
-    
-
-
-
-
   </div>
   <!-- /.content-wrapper -->
-
-
-
-
-
-
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -114,8 +105,9 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
+ @endsection
+
 
 
