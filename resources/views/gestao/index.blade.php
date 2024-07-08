@@ -20,7 +20,7 @@
     <div class="container-fluid">
       <!-- Info boxes -->
      <div class="row">
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -34,7 +34,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -45,11 +45,11 @@
             <div class="icon">
               <i class="fa fa-clipboard"></i>
             </div>
-            <a href="paginas/gestao/nivel/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/nivel_academico" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -64,7 +64,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -75,7 +75,7 @@
             <div class="icon">
               <i class="fab fa-accusoft"></i>
             </div>
-            <a href="paginas/gestao/cursos/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/cursos" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -85,7 +85,7 @@
       <div class="row">
        
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -99,7 +99,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -114,7 +114,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -130,7 +130,7 @@
         </div>
         <!-- ./col -->
 
-         <div class="col-lg-3 col-6">
+         <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -141,7 +141,7 @@
             <div class="icon">
               <i class="fa5 fa-building"></i>
             </div>
-            <a href="paginas/gestao/classe/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/classes" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -152,7 +152,7 @@
 
        <div class="row">
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -166,21 +166,8 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>44</h3>
-              <p>Matriculas</p>
-            </div>
-            <div class="icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <a href="paginas/gestao/matricula/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
 
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
@@ -194,93 +181,42 @@
           </div>
         </div>
         <!-- ./col -->
-
-         <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>150</h3>
-              <p>Serviços</p>
-            </div>
-            <div class="icon">
-              <i class="fas fa-server"></i>
-            </div>
-            <a href="paginas/gestao/serviços/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-       </div>
-       <!-- ./row -->
-       <div class="row">
-       
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>53</h3>
-              <p>Encarregados</p>
-            </div>
-            <div class="icon">
-               <i class="fas fa-users"></i>
-            </div>
-            <a href="paginas/utilizadores/encarregado/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
               <h3>44</h3>
-              <p>Inscrições</p>
-            </div>
-            <div class="icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <a href="paginas/gestao/inscrição/listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
 
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>65</h3>
-              <p>Confirmação de Inscrições</p>
+              <p>Disciplina</p>
             </div>
             <div class="icon">
              <i class="fas fa-users"></i>
             </div>
-            <a href="paginas/gestao/inscrição/conf_listar.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/disciplinas" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
 
-         <div class="col-lg-3 col-6">
+        <!-- ./col -->
+        <div class="col-lg-6 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>150</h3>
-              <p>Confirmações</p>
+              <h3>44</h3>
+
+              <p>Época</p>
             </div>
             <div class="icon">
-              <i class="fas fa-users"></i>
+             <i class="fas fa-users"></i>
             </div>
-            <a href="paginas/gestao/inscrição/confirmacao.html" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/epocas" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
-       </div>
-       <!-- ./row -->
 
     </div><!--/. container-fluid -->
   </section>
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

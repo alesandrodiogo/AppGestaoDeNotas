@@ -1,6 +1,7 @@
- <div class="wrapper">
-  <%- include('../../partials/navbar'); %>
-   
+@extends('layouts.main')
+@section('title','Nível académico')
+@section('content')
+ <div class="wrapper">  
 
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -13,7 +14,7 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"> <button type="submit" class="btn btn-primary btn-block"><a href="gestao/nivel">Novo</a> </button></li>
+            <li class="breadcrumb-item"> <button type="submit" class="btn btn-primary btn-block"><a href="/nivel_academico/add">Novo</a> </button></li>
           </ol>
         </div>
       </div>
@@ -43,7 +44,7 @@
               <td>I12DT</td>
               <td>Jesus Afonso</td>
               <td> 
-                <a class="btn btn-info btn-sm" href="gestao/nivel/edit">
+                <a class="btn btn-info btn-sm" href="/nivel_academico/edit">
                 <i class="fas fa-pencil-alt"></i></a>
 
                 <a class="btn btn-danger btn-sm" href="#">
@@ -78,9 +79,9 @@
 <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
+@endsection
 
 
 

@@ -1,11 +1,13 @@
+@extends('layouts.main')
+@section('title','Editar curso')
+@section('content')
 <div class="wrapper">
-  <%- include('../../partials/navbar'); %>
-  
 
+ 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
   <div class="card-header">
-  <h3 class="title"> Adicionar </h3>
+  <h3 class="title"> Actualizar </h3>
   </div>
         <!-- Main content -->
     <section class="content">
@@ -31,36 +33,14 @@
                         <input type="text" class="form-control" id="exampleInputName1" placeholder="Nome">
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">Matricula</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Matricula">
+                  <label for="exampleInputName1">Data de Criação</label>
+                        <input type="date" class="form-control" id="exampleInputName1" placeholder="Descrição">
                 </div>
               </div>
               <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-                 <label for="exampleInputName1">Modelo</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Modelo">
-                </div>
-                <!-- /.form-group -->
               
-                  <div class="form-group">
-                  <label for="exampleInputName1">Descrição</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Descrição">
-                </div>
-               
-                <!-- /.form-group -->
-              </div>
-             
-             <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">Tipo de Transporte</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Tipo Transporte">
-                </div>
-                 
-              </div>
-              <!-- /.col -->
                <div class="form-group">
-                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
+                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
               </div>
               
             </div>
@@ -82,18 +62,8 @@
 </div>
   <!-- /.content-wrapper -->
 
-    
-
-
-
-
   </div>
   <!-- /.content-wrapper -->
-
-
-
-
-
 
 
   <!-- Control Sidebar -->
@@ -103,10 +73,6 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
-
-
-
-
+@endsection

@@ -41,3 +41,63 @@ Route::get('/user_profile_prof/edit', function(){
 Route::get('/utilizadores', function(){
     return view('utilizadores.index');
 });
+
+Route::get('/classes', function(){
+    return view('gestao.classe.listar');
+});
+
+Route::get('/classe/add', function(){
+    return view('gestao.classe.adicionar');
+});
+
+Route::get('/classe/edit', function(){
+    return view('gestao.classe.editar');
+});
+
+Route::get('/cursos', function(){
+    return view('gestao.cursos.listar');
+});
+
+Route::get('/curso/add', function(){
+    return view('gestao.cursos.adicionar');
+});
+
+Route::get('/curso/edit', function(){
+    return view('gestao.cursos.editar');
+});
+
+Route::get('/disciplinas', function(){
+    return view('gestao.disciplina.listar');
+});
+
+Route::get('/disciplina/add', function(){
+    return view('gestao.disciplina.adicionar');
+});
+
+Route::get('/disciplina/edit', function(){
+    return view('gestao.disciplina.editar');
+});
+
+Route::get('/epocas', function(){
+    return view('gestao.epoca.listar');
+});
+
+Route::get('/epoca/add', function(){
+    return view('gestao.epoca.adicionar');
+});
+
+Route::get('/epoca/edit', function(){
+    return view('gestao.epoca.editar');
+});
+
+Route::get('/nivel_academico', function(){
+    return view('gestao.nivel.listar');
+});
+
+Route::get('/nivel_academico/add', function(){
+    return view('gestao.nivel.adicionar');
+});
+
+Route::get('/nivel_academico/edit', function(){
+    return view('gestao.nivel.editar');
+});

@@ -1,6 +1,8 @@
+@extends('layouts.main')
+@section('title','Adicionar ')
+@section('content')
 <div class="wrapper">
-  <%- include('../../partials/navbar'); %>
-
+ 
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -13,7 +15,7 @@
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Dados</h3>
+            <h3 class="card-title">Nivél</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -28,48 +30,15 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="exampleInputName1">Nome</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Nome">
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nome">
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">Endereço</label>
+                  <label for="exampleInputName1">Descrição</label>
                         <input type="password" class="form-control" id="exampleInputName1" placeholder="Descrição">
                 </div>
               </div>
               <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-                 <label for="exampleInputName1">Telefone</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Telefone">
-                </div>
-                <!-- /.form-group -->
               
-                  <div class="form-group">
-                  <label for="exampleInputName1">Email</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Email">
-                </div>
-               
-                <!-- /.form-group -->
-              </div>
-             
-             <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">Senha</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Senha">
-                </div>
-                 
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-               
-                <!-- /.form-group -->
-              
-                  <div class="form-group">
-                  <label for="exampleInputName1">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Confirmar Senha">
-                </div>
-               
-                <!-- /.form-group -->
-              </div>
                <div class="form-group">
                 <button type="button" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
               </div>
@@ -93,17 +62,8 @@
 </div>
   <!-- /.content-wrapper -->
 
-    
-
-
-
-
   </div>
   <!-- /.content-wrapper -->
-
-
-
-
 
 
 
@@ -114,10 +74,9 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
-
+@endsection
 
 
 

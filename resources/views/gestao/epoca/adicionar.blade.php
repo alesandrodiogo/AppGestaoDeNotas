@@ -1,5 +1,7 @@
+@extends('layouts.main')
+@section('title','Adicionar época')
+@section('content')
 <div class="wrapper">
-  <%- include('../../partials/navbar'); %>
    
 
   <!-- Content Wrapper. Contains page content -->
@@ -59,19 +61,8 @@
 </div>
   <!-- /.content-wrapper -->
 
-    
-
-
-
-
   </div>
   <!-- /.content-wrapper -->
-
-
-
-
-
-
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -80,8 +71,8 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
+@endsection
 
 

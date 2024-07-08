@@ -1,6 +1,8 @@
+@extends('layouts.main')
+@section('title','Disciplinas')
+@section('content')
 <div class="wrapper">
-  <%- include('../../partials/navbar'); %>
-  
+
 
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -9,11 +11,11 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Nome da área Ex. Turmas</h1>
+          <h1>disciplinas</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"> <button type="submit" class="btn btn-primary btn-block"><a href="/gestao/horario">Novo</a> </button></li>
+            <li class="breadcrumb-item"> <button type="submit" class="btn btn-primary btn-block"><a href="/disciplina/add">Novo</a> </button></li>
           </ol>
         </div>
       </div>
@@ -26,7 +28,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Lista de funcionário</h3>
+        <h3 class="card-title">Lista de Disciplina</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -45,17 +47,11 @@
                         Nome
                     </th>
                     <th style="width: 15%">
-                       Email
+                       classe
                     </th>
                     <th style="width: 15%">
-                        Cargo
-                    </th>
-                    <th>
-                       Telefone
-                    </th>
-                     <th style="width: 15%">
-                        Endereço
-                    </th>
+                        Curso
+                    </th>                    
                     <th style="width:15%" class="text-center">
                         Estado
                     </th>
@@ -69,22 +65,13 @@
                
                 <tr>
                     <td>
-                        Jesus Afonso
+                        Matematica
                     </td>
                     <td>
-                       
-                            Created 01.01.2019
-                        
+                      6ª Classe
                     </td>
                     <td>
-                            01.01.2019
-                       
-                    </td>
-                    <td class="project_progress">
-                        3.000,00
-                    </td>
-                     <td class="project_progress">
-                        viana luanda sul/Mutamba
+                       Curso
                     </td>
                     <td class="project-state">
                        <div class="form-group">
@@ -93,7 +80,7 @@
                     </td>
                     <td class="project-actions text-right">
                         
-                        <a class="btn btn-info btn-sm" href="/gestao/horario/edit">
+                        <a class="btn btn-info btn-sm" href="/disciplina/edit">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
@@ -118,7 +105,7 @@
 <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
+@endsection
 

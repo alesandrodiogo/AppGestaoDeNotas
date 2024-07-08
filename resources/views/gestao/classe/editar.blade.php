@@ -1,6 +1,8 @@
-<div class="wrapper">
-  <%- include('../../partials/navbar'); %>
-  
+@extends('layouts.main')
+@section('title','Editar classe')
+@section('content')
+ <div class="wrapper">
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -13,7 +15,7 @@
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Nivel</h3>
+            <h3 class="card-title">Dados</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -28,15 +30,14 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="exampleInputName1">Nome</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nome">
+                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Nome">
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">Descrição</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Descrição">
+                  <label for="exampleInputName1">Data Criação</label>
+                        <input type="date" class="form-control" id="exampleInputName1" placeholder="Data">
                 </div>
               </div>
-              <!-- /.col -->
-              
+              <!-- /.col --> 
                <div class="form-group">
                 <button type="button" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
               </div>
@@ -60,19 +61,8 @@
 </div>
   <!-- /.content-wrapper -->
 
-    
-
-
-
-
   </div>
   <!-- /.content-wrapper -->
-
-
-
-
-
-
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -81,10 +71,8 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
-
-
+@endsection
 
 

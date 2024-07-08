@@ -1,7 +1,8 @@
+@extends('layouts.main')
+@section('title','Cursos')
+@section('content')
 <div class="wrapper">
-  <%- include('../../partials/navbar'); %>
-    
-
+   
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -9,11 +10,11 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Época</h1>
+          <h1>Curso</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"> <button type="submit" class="btn btn-primary btn-block"><a href="/gestao/epoca">Novo</a> </button></li>
+            <li class="breadcrumb-item"> <button type="submit" class="btn btn-primary btn-block"><a href="/curso/add">Novo</a> </button></li>
           </ol>
         </div>
       </div>
@@ -26,7 +27,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Lista de épocas</h3>
+        <h3 class="card-title">Lista Curso</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -42,12 +43,12 @@
             <thead>
                 <tr>
                     <th style="width: 15%">
-                        épocas
+                        Nome
                     </th>
                     <th style="width: 15%">
-                      Descrição
+                       Data de Criação
                     </th>
-                    
+                                     
                     <th style="width:15%" class="text-center">
                         Estado
                     </th>
@@ -64,9 +65,8 @@
                         Jesus Afonso
                     </td>
                     <td>
-                    Descrição
+                    Created 01.01.2019  
                     </td>
-                   
                     <td class="project-state">
                        <div class="form-group">
                       <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
@@ -74,7 +74,7 @@
                     </td>
                     <td class="project-actions text-right">
                         
-                        <a class="btn btn-info btn-sm" href="/gestao/epoca/edit">
+                        <a class="btn btn-info btn-sm" href="/curso/edit">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
@@ -97,10 +97,9 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
-  <%- include('../../partials/footer'); %>
 </div>
 <!-- ./wrapper -->
+@endsectin
+
 
 
