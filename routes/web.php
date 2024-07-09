@@ -229,3 +229,15 @@ Route::get('/nota/add', function(){
 Route::get('/nota/edit', function(){
     return view('administracao.notas.editar');
 });
+
+Route::get('/suporte', function(){
+    return view('suporte.index');
+});
+
+Route::get('/suporte/ajuda', function(){
+    return view('suporte.ajuda.ajuda');
+});
+
+Route::get('/suporte/notificacao', function(){
+    return view('suporte.notificacao.notificacao');
+});

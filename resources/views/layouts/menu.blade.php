@@ -84,7 +84,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="control.html" class="brand-link">
+    <a href="/" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">CEPM</span>
     </a>
@@ -97,7 +97,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="control.html" class="nav-link active">
+            <a href="/" class="nav-link active">
              <i class="nav-icon fas fa-solar-panel"></i>
               <p>Painel
               </p>
@@ -131,39 +131,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="conteudo.html" class="nav-link">
-              <i class="nav-icon fas fa-folder"></i>
-              <p>Conteúdo
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="financas.html" class="nav-link">
-              <i class="nav-icon fas fa-money-bill-alt"></i>
-              <p>Finanças
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="geral.html" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>Geral
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="biblioteca.html" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>Biblioteca
-              </p>
-            </a>
-          </li> 
-
-          <li class="nav-item">
-            <a href="suporte.html" class="nav-link">
+            <a href="/suporte" class="nav-link">
               <i class="nav-icon fas fa-wrench"></i>
               <p>Suporte
               </p>
