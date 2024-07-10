@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlunoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,17 +13,12 @@ Route::get('/gestao', function(){
     return view('gestao.index');
 });
 
-Route::get('/user_profile_aluno', function(){
-    return view('utilizadores.aluno.listar');
-});
+Route::get('/user_profile_aluno', [AlunoController::class, 'index'])
+->name('utilizadores.aluno.listar');
 
-Route::get('/user_profile_aluno/add', function(){
-    return view('utilizadores.aluno.adicionar');
-});
+Route::get('/user_profile_aluno/add', [AlunoController::class, 'create']);
 
-Route::get('/user_profile_aluno/edit', function(){
-    return view('utilizadores.aluno.editar');
-});
+Route::get('/user_profile_aluno/edit', [AlunoController::class, 'edit']);
 
 Route::get('/user_profile_aluno/ver', function(){
     return view('utilizadores.aluno.veraluno');

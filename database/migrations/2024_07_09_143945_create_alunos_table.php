@@ -13,10 +13,19 @@ return new class extends Migration
     {
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->integer('numero');
-            $table->foreignId('turma_id');
-            $table->foreignId('sala_id');
+            $table->string('nome_completo');
+            $table->integer('numero_estudante');
+            $table->string('nome_pai');
+            $table->string('nome_mae');
+            $table->string('telefone');
+            $table->foreignId('turma_id')->constrained()
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreignId('sala_id')->constrained()
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->dateTime('data_nascimento');
+            $table->string('Morada');
             $table->timestamps();
         });
     }

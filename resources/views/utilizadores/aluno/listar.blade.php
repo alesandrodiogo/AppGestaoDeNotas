@@ -34,19 +34,31 @@
             <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
+              <th>ID</th>
                 <th>Nome</th>
                 <th>Nº Estudante</th>
+                <th>Nome Pai</th>
+                <th>Nome Mãe</th>
+                <th>Telefone</th>
                 <th>Turma</th>
                 <th>Sala</th>
+                <th>Data de Nascimento</th>
+                <th>Morada</th>
                 <th>Opção</th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td>Trident Internet Explorer 4.0</td>
-                <td>Internet Explorer 4.0</td>
-                <td>Win 95+</td>
-                <td> 4</td>
+              <th>1</th>
+                <td>Francisco</td>
+                <td>200</td>
+                <td>Joao</td>
+                <td>Maria</td>
+                <td>923487493</td>
+                <td>B13</td>
+                <td>14</td>
+                <th>15/05/2001</th>
+                <th>Baiiro azul</th>
                 <td> 
                   <a class="btn btn-info btn-sm" href="/user_profile_aluno/edit">
                   <i class="fas fa-pencil-alt"></i></a>
@@ -59,15 +71,6 @@
               </tr>
               
               </tbody>
-              <tfoot>
-              <tr>
-                <th>Nome</th>
-                <th>Nº Estudante</th>
-                <th>Turma</th>
-                <th>Sala</th>
-                <th>Opção</th>
-              </tr>
-              </tfoot>
             </table>
           </div>
           <!-- /.card-body -->
