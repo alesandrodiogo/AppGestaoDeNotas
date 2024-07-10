@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Escola</h1>
+            <h1>Notas</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -30,7 +30,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Lista de escolas</h3>
+          <h3 class="card-title">Lista de notas</h3>
 
           <div class="card-tools">
             <button
@@ -56,35 +56,35 @@
             <thead>
               <tr>
                 <th style="width: 15%">ID</th>
-                <th style="width: 15%">ID Responsável</th>
-                <th style="width: 15%">Nome</th>
-                <th style="width: 15%">NIF</th>
-                <th>ID Tipologia</th>
-                <th style="width: 15%">ID Designação</th>
-                <th style="width: 15%" class="text-center">ID Tipo de Escola</th>
-                <th style="width: 15%" class="text-center">ID Subsistema</th>
-                <th style="width: 15%" class="text-center">ID País</th>
-                <th style="width: 15%" class="text-center">ID Cidade</th>
-                <th style="width: 15%" class="text-center">ID Município</th>
-                <th style="width: 15%" class="text-center">Bairro</th>
+                <th style="width: 15%">Aluno</th>
+                <th style="width: 15%">Ano lectivo</th>
+                <th style="width: 15%">Disciplina</th>
+                <th style="width: 15%">MT1</th>
+                <th style="width: 15%">MT2</th>
+                <th style="width: 15%">MT3</th>
+                <th style="width: 15%">MFD</th>
+                <th style="width: 15%">MAC</th>
+                <th style="width: 15%">NPP</th>
+                <th style="width: 15%">NPT</th>
+                <th style="width: 15%">MT</th>
                 <th style="width: 15%" class="text-center">Opções</th>
               </tr>
             </thead>
             <tbody>
               <!--<% escolas.forEach(escolas=>{ %>-->
               <tr>
-                <td><%=escolas.id %></td>
-                <td><%=escolas.responsavel_id %></td>
-                <td><%=escolas.nome %></td>
-                <td><%=escolas.nif %></td>
-                <td ><%=escolas.tipologiA_id %></td>
-                <td ><%=escolas.designacao_id %></td>
-                <td ><%=escolas.tipoescola_id %></td>
-                  <td><%=escolas.subsistema_id %></td>
-                  <td><%=escolas.pais_id %></td>
-                  <td><%=escolas.cidade_id %></td>
-                  <td><%=escolas.municipio_id %></td>
-                  <td><%=escolas.bairro %></td>
+                <td>1</td>
+                <td>2</td>
+                <td>2023-2024</td>
+                <td>Matematica</td>
+                <td>10</td>
+                <td >10</td>
+                <td >10</td>
+                <td >10</td>
+                <td>10</td>
+                <td>10</td>
+                <td>10</td>
+                <td>10</td>
                 </td>
                 <td class="project-actions text-right">
                   <a class="btn btn-info btn-sm" href="/nota/edit">

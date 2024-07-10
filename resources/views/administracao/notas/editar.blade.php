@@ -15,7 +15,7 @@
          <!-- SELECT2 EXAMPLE -->
          <div class="card card-default">
            <div class="card-header">
-             <h3 class="card-title">Escola</h3>
+             <h3 class="card-title">Nota</h3>
  
              <div class="card-tools">
                <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -24,141 +24,83 @@
               
              </div>
            </div>
-        <form action="/admin/escola/add" method="POST">
-               <!-- /.card-header -->
-               <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="exampleInputName1">Rensponsável</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
-                      <select class="form-control select2" name="responsavel" style="width: 100%;">
-                        <!--<% responsavel.forEach(responsavel=>{ %>-->
-                          <option  value="<%=responsavel.id %>"><%=responsavel.nome %></option>
-                          <!--<%}) %>-->
-                      </select>
-                    </div>
-                     <div class="form-group">
-                      <label for="exampleInputName1">Nome</label>
-                            <input type="text" name="nome" value="" class="form-control" id="exampleInputName1" placeholder="Nome">
-                    </div>
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-6">
-                    <div class="form-group">
-                     <label for="exampleInputName1">NIF</label>
-                            <input type="text" name="nif" value="" class="form-control" id="exampleInputName1" placeholder="NIF">
-                    </div>
-                    <!-- /.form-group -->
-                    <div class="form-group">
-                      <label for="exampleInputName1">Tipologia</label>
-                      <select class="form-control select2" name="tipologia" style="width: 100%;">
-                        <!--<% tipologia.forEach(tipologia=>{ %>-->
-                          <option value="<%=tipologia.id %>"><%=tipologia.descricao %></option>
-                          <!--<%}) %>-->
-                      </select>
-                    </div>
-    
-                   
-                    <!-- /.form-group -->
-                  </div>
-                 
-                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="exampleInputName1">Designação</label>
-                    <select class="form-control select2" name="designacao" style="width: 100%;">
-                      <!--<% designacao.forEach(designacao=>{ %>-->
-                        <option  value="<%=designacao.id %>"><%=designacao.descricao %></option>
-                        <!--<%}) %>-->
-                    </select>
-                  </div>
-                     
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="exampleInputName1">Tipo de Escola</label>
-                      <select class="form-control select2" name="tipoescola" style="width: 100%;">
-                        <!--<% tipoescolas.forEach(tipoescolas=>{ %>-->
-                          <option value="<%=tipoescolas.id %>"><%=tipoescolas.descricao %></option>
-                          <!--<%}) %>-->
-                      </select>
-                    </div>
-                     
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label> Subsistema</label>
-                      <select class="select2" name="subsistema" multiple="multiple" data-placeholder="Subsistema" style="width: 100%;">
-                        <!--<% subsistema.forEach(subsistema=>{ %>-->
-                          <option value="<%=subsistema.id %>"><%=subsistema.nome %></option>
-                          <!--<%}) %>-->
-                      </select>
-                    </div>
-                     
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="exampleInputName1">País</label>
-                      <select class="form-control select2" name="pais" style="width: 100%;">
-                        <!--<% pais.forEach(pais=>{ %>-->
-                          <option value="<%=pais.id %>"><%=pais.nome %></option>
-                          <!--<%}) %>-->
-                      </select>
-                    </div>
-                     
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="exampleInputName1">provincia</label>
-                      <select class="form-control select2" name="provincia" style="width: 100%;">
-                        <!--<% provincia.forEach(provincia=>{ %>-->
-                          <option value="<%=provincia.id %>"><%=provincia.nome %></option>
-                          <!--<%}) %>-->
-                      </select>
-                    </div>
-                     
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="exampleInputName1">Município</label>
-                      <select class="form-control select2" name="municipio" style="width: 100%;">
-                        <!--<% municipio.forEach(municipio=>{ %>-->
-                          <option value="<%=municipio.id %>"><%=municipio.nome %></option>
-                          <!--<%}) %>-->
-                      </select>
-                    </div>
-                     
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-6">
-                   
-                    <!-- /.form-group -->
-                      <div class="form-group">
-                      <label for="exampleInputName1">Bairro</label>
-                            <input type="text" name="bairro" value="" class="form-control" id="exampleInputName1" placeholder="Bairro">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputFile">Adicionar logotipo</label>
-                      <div class="input-group">
-                        <div class="custom-file">
-                          <input type="file" name="file" value="" class="custom-file-input" id="exampleInputFile">
-                          <label class="custom-file-label" for="exampleInputFile">Escolha um logo</label>
-                        </div>
-                      </div>
-                    </div>
-                   
-                    <!-- /.form-group -->
-                  </div>
-                   <div class="form-group">
-                    <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
-                  </div>
-                  
+           <form action="/admin/escola/add" enctype="multipart/form-data" method="POST">
+           <!-- /.card-header -->
+           <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="exampleInputName1">Aluno</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
+                  <select class="form-control select2" name="aluno_id" style="width: 100%;">
+                    <!--<% responsavel.forEach(responsavel=>{ %>-->
+                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
+                    <!--<%}) %>-->
+                  </select>
                 </div>
-                <!-- /.row -->
-               </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Ano lectivo</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
+                  <select class="form-control select2" name="anolectivo_id" style="width: 100%;">
+                    <!--<% responsavel.forEach(responsavel=>{ %>-->
+                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
+                    <!--<%}) %>-->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName1">Disciplina</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
+                  <select class="form-control select2" name="disciplina_id" style="width: 100%;">
+                    <!--<% responsavel.forEach(responsavel=>{ %>-->
+                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
+                    <!--<%}) %>-->
+                  </select>
+                </div>
+                 <div class="form-group">
+                  <label for="exampleInputName1">MT1</label>
+                        <input type="number" name="mt1" class="form-control" id="mt1" placeholder="">
+                </div>
+                <div class="form-group">
+                 <label for="exampleInputName1">MT2</label>
+                        <input type="number" name="mt2" class="form-control" id="mt2" placeholder="">
+                </div>
+                <div class="form-group">
+                 <label for="exampleInputName1">MT3</label>
+                        <input type="number" name="mt3" class="form-control" id="mt3" placeholder="">
+                </div>
+                <div class="form-group">
+                 <label for="exampleInputName1">MAC</label>
+                        <input type="number" name="mac" class="form-control" id="mac" placeholder="">
+                </div>
+                <div class="form-group">
+                 <label for="exampleInputName1">NPP</label>
+                        <input type="number" name="npp" class="form-control" id="npp" placeholder="">
+                </div>
+                <div class="form-group">
+                 <label for="exampleInputName1">NPT</label>
+                        <input type="number" name="npt" class="form-control" id="npt" placeholder="">
+                </div>
               </div>
-              <!-- /.card-body -->
-        </form>
+              <!-- /.col -->
+              <div class="col-md-6">
+                
+              <div class="form-group">
+                 <label for="exampleInputName1">MFD</label>
+                        <input type="number" disabled name="mfd" class="form-control" id="mfd" placeholder="">
+                </div>
+                <div class="form-group">
+                 <label for="exampleInputName1">MT</label>
+                        <input type="number" disabled name="mt" class="form-control" id="mt" placeholder="">
+                </div>
+              </div>
+             
+               <div class="form-group">
+                <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
+              </div>
+              
+            </div>
+            <!-- /.row -->
+           </div>
+          </div>
+          <!-- /.card-body -->
+       </form>
         
          </div>
           <!-- /.row 1-->

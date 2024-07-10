@@ -33,7 +33,7 @@
           <div class="icon">
             <i class="nav-icon fas fa-school"></i>
           </div>
-          <a href="/administracao/escolas" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="/escolas" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
