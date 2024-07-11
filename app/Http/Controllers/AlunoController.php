@@ -57,7 +57,7 @@ class AlunoController extends Controller
        public function show($id)
        {
            $aluno = Aluno::with(['turma', 'sala'])->findOrFail($id);
-           return view('utilizadores.aluno.listar', compact('aluno'));
+           return view('utilizadores.aluno.veraluno', compact('aluno'));
        }
 
        // Mostrar o formulário de edição

@@ -71,23 +71,23 @@
               </tr>
             </thead>
             <tbody>
-              <!--<% escolas.forEach(escolas=>{ %>-->
+            @foreach ($notas as $nota)
               <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>2023-2024</td>
-                <td>Matematica</td>
-                <td>10</td>
-                <td >10</td>
-                <td >10</td>
-                <td >10</td>
-                <td>10</td>
-                <td>10</td>
-                <td>10</td>
-                <td>10</td>
+                <td>{{ $nota->id }}</td>
+                <td>{{ $nota->aluno->nome }}</td>
+                <td>{{ $nota->anoLectivo->nome }}</td>
+                <td>{{ $nota->disciplina->nome }}</td>
+                <td>{{ $nota->mt1 }}</td>
+                <td >{{ $nota->mt2 }}</td>
+                <td >{{ $nota->mt3 }}</td>
+                <td >{{ $nota->mfd }}</td>
+                <td>{{ $nota->mac }}</td>
+                <td >{{ $nota->npp }}</td>
+                <td >{{ $nota->npt }}</td>
+                <td >{{ $nota->mt }}</td>
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-info btn-sm" href="/nota/edit">
+                  <a class="btn btn-info btn-sm" href="/nota/edit/{{ $nota->id }}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
                   <a class="btn btn-danger btn-sm" href="/admin/escola/del/<%=escolas.id %>">
@@ -95,7 +95,7 @@
                   </a>
                 </td>
               </tr>
-              <!--<%}) %>-->
+              @endforeach
             </tbody>
           </table>
         </div>

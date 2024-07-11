@@ -48,24 +48,25 @@
               </tr>
               </thead>
               <tbody>
+              @foreach ($alunos as $aluno)
               <tr>
-              <th>1</th>
-                <td>Francisco</td>
-                <td>200</td>
-                <td>Joao</td>
-                <td>Maria</td>
-                <td>923487493</td>
-                <td>B13</td>
-                <td>14</td>
-                <th>15/05/2001</th>
-                <th>Baiiro azul</th>
+              <th>{{ $aluno->id }}</th>
+                <td>{{ $aluno->nome }}</td>
+                <td>{{ $aluno->numero }}</td>
+                <td>{{ $aluno->nome_pai }}</td>
+                <td>{{ $aluno->nome_mae }}</td>
+                <td>{{ $aluno->telefone }}</td>
+                <td>{{ $aluno->turma->nome }}</td>
+                <td>{{ $aluno->sala->nome }}</td>
+                <th>{{ $aluno->data_nascimento }}</th>
+                <th>{{ $aluno->morada }}</th>
                 <td> 
-                  <a class="btn btn-info btn-sm" href="/user_profile_aluno/edit">
+                  <a class="btn btn-info btn-sm" href="{{ $aluno->id }}">
                   <i class="fas fa-pencil-alt"></i></a>
 
                   <a class="btn btn-danger btn-sm" href="#">
                   <i class="fas fa-trash"></i></a>
-                  <a class="btn btn-danger btn-sm" href="/user_profile_aluno/ver">
+                  <a class="btn btn-danger btn-sm" href="/user_profile_aluno/ver/{{ $aluno->id }}">
                     <i class="fas fa-eye"></i></a>
                 </td>
               </tr>

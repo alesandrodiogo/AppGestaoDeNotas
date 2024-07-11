@@ -24,33 +24,35 @@
               
              </div>
            </div>
-           <form action="/admin/escola/add" enctype="multipart/form-data" method="POST">
+           <form action="/nota/update/{{$nota->id}}" method="POST">
            <!-- /.card-header -->
+           @csrf
+           @method('PUT')
            <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="exampleInputName1">Aluno</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="aluno_id" style="width: 100%;">
-                    <!--<% responsavel.forEach(responsavel=>{ %>-->
-                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
-                    <!--<%}) %>-->
+                  @foreach ($alunos as $aluno)
+                  <option value="{{ $aluno->id }}" {{ $nota->aluno_id == $aluno->id ? 'selected' : '' }}>{{ $aluno->nome }}</option>
+                  @endforeach
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName1">Ano lectivo</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="anolectivo_id" style="width: 100%;">
-                    <!--<% responsavel.forEach(responsavel=>{ %>-->
-                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
-                    <!--<%}) %>-->
+                  @foreach ($anosLectivos as $anoLectivo)
+                  <option value="{{ $anoLectivo->id }}" {{ $nota->ano_lectivo_id == $anoLectivo->id ? 'selected' : '' }}>{{ $anoLectivo->nome }}</option>
+                  @endforeach
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName1">Disciplina</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="disciplina_id" style="width: 100%;">
-                    <!--<% responsavel.forEach(responsavel=>{ %>-->
-                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
-                    <!--<%}) %>-->
+                  @foreach ($disciplinas as $disciplina)
+                  <option value="{{ $disciplina->id }}" {{ $nota->disciplina_id == $disciplina->id ? 'selected' : '' }}>{{ $disciplina->nome }}</option>
+                  @endforeach
                   </select>
                 </div>
                  <div class="form-group">

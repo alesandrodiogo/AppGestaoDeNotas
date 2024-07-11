@@ -23,7 +23,9 @@
                 </button>
               </div>
             </div>
+            <form action="/alunos/store" method="POST">
             <!-- /.card-header -->
+            @csrf
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
@@ -116,7 +118,7 @@
              </div>
             </div>
             <!-- /.card-body -->
-         
+            </form>
           </div>
            <!-- /.row 1-->
            

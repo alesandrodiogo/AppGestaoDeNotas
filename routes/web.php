@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\NotaController;
+use App\Models\Nota;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,16 +15,12 @@ Route::get('/gestao', function(){
     return view('gestao.index');
 });
 
-Route::get('/user_profile_aluno', [AlunoController::class, 'index'])
-->name('utilizadores.aluno.listar');
-
+Route::get('/user_profile_aluno', [AlunoController::class, 'index']);
 Route::get('/user_profile_aluno/add', [AlunoController::class, 'create']);
-
-Route::get('/user_profile_aluno/edit', [AlunoController::class, 'edit']);
-
-Route::get('/user_profile_aluno/ver', function(){
-    return view('utilizadores.aluno.veraluno');
-});
+Route::post('/alunos/store', [AlunoController::class, 'store']);
+Route::get('/user_profile_aluno/edit/{id}', [AlunoController::class, 'edit']);
+Route::put('/user_profile_aluno/update/{id}', [AlunoController::class, 'update']);
+Route::get('/user_profile_aluno/ver/{id}', [AlunoController::class, 'show']);
 
 Route::get('/user_profile_prof', function(){
     return view('utilizadores.professor.listar');
@@ -214,17 +212,11 @@ Route::get('/tipologia/edit', function(){
     return view('administracao.tipologia.editar');
 });
 
-Route::get('/notas', function(){
-    return view('administracao.notas.listar');
-});
-
-Route::get('/nota/add', function(){
-    return view('administracao.notas.adicionar');
-});
-
-Route::get('/nota/edit', function(){
-    return view('administracao.notas.editar');
-});
+Route::get('/notas', [NotaController::class, 'index']);
+Route::get('/nota/add', [NotaController::class, 'create']);
+Route::post('/notas/store', [NotaController::class, 'store']);
+Route::get('/nota/edit/{id}', [NotaController::class, 'edit']);
+Route::put('/nota/update/{id}', [AlunoController::class, 'update']);
 
 Route::get('/suporte', function(){
     return view('suporte.index');

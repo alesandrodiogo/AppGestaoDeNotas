@@ -23,19 +23,22 @@
                 </button>
               </div>
             </div>
+            <form action="/user_profile_aluno/update/{{$aluno->id}}" method="POST">
             <!-- /.card-header -->
+            @csrf
+            @method('PUT')
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
   
                   <div class="form-group">
                     <label for="exampleInputName1">Nome</label>
-                          <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
+                          <input type="text" value="{{ $aluno->nome }} class="form-control" name="nome" id="nome" placeholder="Nome completo">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputName1">Numero</label>
-                          <input type="text" class="form-control" name="numero" id="numero" placeholder="Numero de estudante">
+                          <input type="text" value="{{ $aluno->numero }} class="form-control" name="numero" id="numero" placeholder="Numero de estudante">
                   </div>
 
                   <div class="form-group">
@@ -116,7 +119,7 @@
              </div>
             </div>
             <!-- /.card-body -->
-         
+            </form>
           </div>
            <!-- /.row 1-->
            

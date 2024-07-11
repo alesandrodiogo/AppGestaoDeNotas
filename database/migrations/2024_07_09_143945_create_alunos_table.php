@@ -25,7 +25,7 @@ return new class extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->dateTime('data_nascimento');
-            $table->string('Morada');
+            $table->string('morada');
             $table->timestamps();
         });
     }

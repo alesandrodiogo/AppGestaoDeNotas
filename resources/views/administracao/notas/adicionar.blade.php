@@ -24,33 +24,34 @@
              
             </div>
           </div>
-       <form action="/admin/escola/add" enctype="multipart/form-data" method="POST">
+       <form action="/notas/store" method="POST">
            <!-- /.card-header -->
+           @csrf
            <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="exampleInputName1">Aluno</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="aluno_id" style="width: 100%;">
-                    <!--<% responsavel.forEach(responsavel=>{ %>-->
-                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
-                    <!--<%}) %>-->
+                  @foreach ($alunos as $aluno)
+                    <option selected="selected" value="{{ $aluno->id }}">{{ $aluno->nome }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName1">Ano lectivo</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="anolectivo_id" style="width: 100%;">
-                    <!--<% responsavel.forEach(responsavel=>{ %>-->
-                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
-                    <!--<%}) %>-->
+                  @foreach ($anosLectivos as $anoLectivo)
+                    <option selected="selected" value="{{ $anoLectivo->id }}">{{ $anoLectivo->nome }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName1">Disciplina</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="disciplina_id" style="width: 100%;">
-                    <!--<% responsavel.forEach(responsavel=>{ %>-->
-                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
-                    <!--<%}) %>-->
+                  @foreach ($disciplinas as $disciplina)
+                    <option selected="selected" value="{{ $disciplina->id }}">{{ $disciplina->nome }}</option>
+                    @endforeach
                   </select>
                 </div>
                  <div class="form-group">
