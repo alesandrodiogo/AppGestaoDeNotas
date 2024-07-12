@@ -2,10 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\AnoLectivoController;
+use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\EscolaController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\NotaController;
 use App\Http\Controllers\ProvinciaController;
+use App\Http\Controllers\SalaController;
+use App\Http\Controllers\SubsistemaController;
+use App\Http\Controllers\TipologiaController;
+use App\Http\Controllers\TurmaController;
 use App\Models\Nota;
 
 Route::get('/', function () {
@@ -65,17 +71,11 @@ Route::get('/curso/edit', function(){
     return view('gestao.cursos.editar');
 });
 
-Route::get('/disciplinas', function(){
-    return view('gestao.disciplina.listar');
-});
-
-Route::get('/disciplina/add', function(){
-    return view('gestao.disciplina.adicionar');
-});
-
-Route::get('/disciplina/edit', function(){
-    return view('gestao.disciplina.editar');
-});
+Route::get('/disciplinas', [DisciplinaController::class, 'index']);
+Route::get('/disciplina/add', [DisciplinaController::class, 'create']);
+Route::post('/disciplina/store', [DisciplinaController::class, 'store']);
+Route::get('/disciplina/edit/{id}', [DisciplinaController::class, 'edit']);
+Route::put('/disciplina/update/{id}', [DisciplinaController::class, 'update']);
 
 Route::get('/epocas', function(){
     return view('gestao.epoca.listar');
@@ -101,29 +101,17 @@ Route::get('/nivel_academico/edit', function(){
     return view('gestao.nivel.editar');
 });
 
-Route::get('/salas', function(){
-    return view('gestao.sala.listar');
-});
+Route::get('/salas', [SalaController::class, 'index']);
+Route::get('/sala/add', [SalaController::class, 'create']);
+Route::post('/sala/store', [SalaController::class, 'store']);
+Route::get('/sala/edit/{id}', [SalaController::class, 'edit']);
+Route::put('/sala/update/{id}', [SalaController::class, 'update']);
 
-Route::get('/sala/add', function(){
-    return view('gestao.sala.adicionar');
-});
-
-Route::get('/sala/edit', function(){
-    return view('gestao.sala.editar');
-});
-
-Route::get('/turmas', function(){
-    return view('gestao.turma.listar');
-});
-
-Route::get('/turma/add', function(){
-    return view('gestao.turma.adicionar');
-});
-
-Route::get('/turma/edit', function(){
-    return view('gestao.turma.editar');
-});
+Route::get('/turmas', [TurmaController::class, 'index']);
+Route::get('/turma/add', [TurmaController::class, 'create']);
+Route::post('/turma/store', [TurmaController::class, 'store']);
+Route::get('/turma/edit/{id}', [TurmaController::class, 'edit']);
+Route::put('/turma/update/{id}', [TurmaController::class, 'update']);
 
 Route::get('/turnos', function(){
     return view('gestao.turno.listar');
@@ -137,17 +125,11 @@ Route::get('/turno/edit', function(){
     return view('gestao.turno.editar');
 });
 
-Route::get('/ano_lectivo', function(){
-    return view('gestao.anolectivo.listar');
-});
-
-Route::get('/ano_lectivo/add', function(){
-    return view('gestao.anolectivo.adicionar');
-});
-
-Route::get('/ano_lectivo/edit', function(){
-    return view('gestao.anolectivo.editar');
-});
+Route::get('/ano_lectivo', [AnoLectivoController::class, 'index']);
+Route::get('/ano_lectivo/add', [AnoLectivoController::class, 'create']);
+Route::post('/escola/store', [AnoLectivoController::class, 'store']);
+Route::get('/ano_lectivo/edit/{id}', [AnoLectivoController::class, 'edit']);
+Route::put('/ano_lectivo/update/{id}', [AnoLectivoController::class, 'update']);
 
 //FIM DAS ROTAS DA GESTAO
 
@@ -173,29 +155,17 @@ Route::post('/municipios/store', [MunicipioController::class, 'store']);
 Route::get('/municipios/edit/{id}', [MunicipioController::class, 'edit']);
 Route::put('/municipios/update/{id}', [MunicipioController::class, 'update']);
 
-Route::get('/subsistemas', function(){
-    return view('administracao.subsistema.listar');
-});
+Route::get('/subsistemas', [SubsistemaController::class, 'index']);
+Route::get('/subsistema/add', [SubsistemaController::class, 'create']);
+Route::post('/subsistema/store', [SubsistemaController::class, 'store']);
+Route::get('/subsistema/edit/{id}', [SubsistemaController::class, 'edit']);
+Route::put('/subsistema/update/{id}', [SubsistemaController::class, 'update']);
 
-Route::get('/subsistema/add', function(){
-    return view('administracao.subsistema.adicionar');
-});
-
-Route::get('/subsistema/edit', function(){
-    return view('administracao.subsistema.editar');
-});
-
-Route::get('/tipologia', function(){
-    return view('administracao.tipologia.listar');
-});
-
-Route::get('/tipologia/add', function(){
-    return view('administracao.tipologia.adicionar');
-});
-
-Route::get('/tipologia/edit', function(){
-    return view('administracao.tipologia.editar');
-});
+Route::get('/tipologia', [TipologiaController::class, 'index']);
+Route::get('/tipologia/add', [TipologiaController::class, 'create']);
+Route::post('/tipologia/store', [TipologiaController::class, 'store']);
+Route::get('/tipologia/edit/{id}', [TipologiaController::class, 'edit']);
+Route::put('/tipologia/update/{id}', [TipologiaController::class, 'update']);
 
 Route::get('/notas', [NotaController::class, 'index']);
 Route::get('/nota/add', [NotaController::class, 'create']);

@@ -23,14 +23,16 @@
               </div>
             </div>
              <!-- /.card-header -->
-             <form action="/admin/subsistema/atualizar" method="POST">
+             <form action="/subsistema/update/{{$subsistema->id}}" method="POST">
+             @csrf
+             @method('PUT')
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInputName1">Nome</label>
-                            <input type="text" name="nome" value="" class="form-control" id="exampleInputName1" placeholder="Nome">
-                             <input type="hidden" name="id" value="">
+                      <label for="nome">Nome</label>
+                            <input type="text" name="nome" value="{{ $subsistema->nome }}" class="form-control" id="nome" placeholder="Nome">
+                             <input type="hidden" name="id" value="{{ $subsistema->id }}">
                     </div>
                   </div>
                   <!-- /.col -->          

@@ -23,13 +23,13 @@
             </div>
           </div>
           <!-- /.card-header -->
-          <form action="/admin/tipologia/add" method="POST">
+          <form action="/tipologia/store" method="POST">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="exampleInputName1">Descrição</label>
-                          <input type="text" name="descricao" class="form-control" id="exampleInputName1" placeholder="Descrição">
+                    <label for="nome">Nome</label>
+                          <input type="text" name="nome" class="form-control" id="nome" placeholder="Descrição">
                   </div>
                 </div>
                 <!-- /.col -->          

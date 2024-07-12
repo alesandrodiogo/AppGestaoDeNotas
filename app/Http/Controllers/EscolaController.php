@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Escola;
+use App\Models\Subsistema;
+use App\Models\Municipio;
+use App\Models\Tipologia;
+use App\Models\Provincia;
 
 class EscolaController extends Controller
 {

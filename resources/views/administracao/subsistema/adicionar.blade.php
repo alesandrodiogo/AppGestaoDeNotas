@@ -23,13 +23,14 @@
             </div>
           </div>
          <!-- /.card-header -->
-         <form action="/admin/subsistema/add" method="POST">
+         <form action="/subsistema/store" method="POST">
+         @csrf
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputName1">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="exampleInputName1" placeholder="Nome">
+                  <label for="nome">Nome</label>
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
                 </div>
               </div>
               <!-- /.col -->          

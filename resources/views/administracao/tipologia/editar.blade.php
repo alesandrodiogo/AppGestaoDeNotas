@@ -23,14 +23,16 @@
               </div>
             </div>
            <!-- /.card-header -->
-           <form action="/admin/tipologia/atualizar" method="POST">
+           <form action="/tipologia/update/{{$tipologia->id}}" method="POST">
+           @csrf
+           @method('PUT')
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="exampleInputName1">Descrição</label>
-                          <input type="text" name="descricao" value="<%=updatetipologia.descricao %>" class="form-control" id="exampleInputName1" placeholder="Descrição">
-                          <input type="hidden" name="id" value="<%=updatetipologia.id %>">
+                    <label for="nome">Nome</label>
+                          <input type="text" name="nome" value="{{ $tipologia->nome }}" class="form-control" id="nome" placeholder="Descrição">
+                          <input type="hidden" name="id" value="{{$tipologia->id}}">
                   </div>
                 </div>
                 <!-- /.col -->          

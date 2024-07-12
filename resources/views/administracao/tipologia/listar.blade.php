@@ -31,7 +31,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Lista de Cargos</h3>
+          <h3 class="card-title">Lista de Tipologia</h3>
 
           <div class="card-tools">
             <button
@@ -57,27 +57,27 @@
             <thead>
               <tr>
                 <th style="width: 15%">ID</th>
-                <th style="width: 15%" class="text-center">Descrição</th>
+                <th style="width: 15%" class="text-center">Nome</th>
                 <th style="width: 15%" class="text-center">Opções</th>
               </tr>
             </thead>
             <tbody>
               <!--<% tipologia.forEach(tipologia=>{ %>-->
               <tr>
-                <td><%=tipologia.id %></td>
-                <td><%=tipologia.descricao %></td>
+                <td>{{ $tipologia->id }}</td>
+                <td>{{ $tipologia->nome }}</td>
                
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-info btn-sm" href="/tipologia/edit">
+                  <a class="btn btn-info btn-sm" href="/tipologia/edit/{{ $tipologia->id }}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="/admin/tipologia/del/<%=tipologia.id %>">
+                  <a class="btn btn-danger btn-sm" href="#">
                     <i class="fas fa-trash"> </i>
                   </a>
                 </td>
               </tr>
-              <!--<%}) %>-->
+              @endforeach
             </tbody>
           </table>
         </div>

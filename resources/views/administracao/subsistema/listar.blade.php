@@ -31,7 +31,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Lista de Cargos</h3>
+          <h3 class="card-title">Lista de Subsistemas</h3>
 
           <div class="card-tools">
             <button
@@ -62,22 +62,22 @@
               </tr>
             </thead>
             <tbody>
-              <!--<% subsistema.forEach(subsistema=>{ %>-->
+            @foreach ($subsistemas as $subsistema)
               <tr>
-                <td><%=subsistema.id %></td>
-                <td><%=subsistema.nome %></td>
+                <td>{{ $subsistema->id }}</td>
+                <td>{{ $subsistema->nome }}</td>
                 
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-info btn-sm" href="/subsistema/edit">
+                  <a class="btn btn-info btn-sm" href="/subsistema/edit/{{ $subsistema->id }}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="/admin/subsistema/del/<%=subsistema.id %>">
+                  <a class="btn btn-danger btn-sm" href="#">
                     <i class="fas fa-trash"> </i>
                   </a>
                 </td>
               </tr>
-              <!--<%}) %>-->
+              @endforeach
             </tbody>
           </table>
         </div>
