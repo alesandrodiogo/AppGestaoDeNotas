@@ -32,46 +32,54 @@
                 <div class="col-md-12">
   
                   <div class="form-group">
-                    <label for="exampleInputName1">Nome</label>
-                          <input type="text" value="{{ $aluno->nome }} class="form-control" name="nome" id="nome" placeholder="Nome completo">
+                    <label for="nome">Nome</label>
+                          <input type="text" value="{{ $aluno->nome }}" class="form-control" name="nome" id="nome" placeholder="Nome completo">
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputName1">Numero</label>
-                          <input type="text" value="{{ $aluno->numero }} class="form-control" name="numero" id="numero" placeholder="Numero de estudante">
+                    <label for="numero">Numero</label>
+                          <input type="text" value="{{ $aluno->numero }}" class="form-control" name="numero" id="numero" placeholder="Numero de estudante">
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputName1">Turma</label>
-                          <input type="text" class="form-control" name="turma_id" id="turma_id" placeholder="Turma">
-                  </div>
+                <label for="turma_id">Turma</label>
+                <select name="turma_id" id="turma_id" class="form-control" required>
+                    @foreach ($turmas as $turma)
+                        <option value="{{ $turma->id }}" {{ $aluno->turma_id == $turma->id ? 'selected' : '' }}>{{ $turma->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
 
-                  <div class="form-group">
-                    <label for="exampleInputName1">Sala</label>
-                          <input type="text" class="form-control" name="sala_id" id="sala_id" placeholder="Numero da sala">
-                  </div>
+            <div class="form-group">
+                <label for="sala_id">Sala</label>
+                <select name="sala_id" id="sala_id" class="form-control" required>
+                    @foreach ($salas as $sala)
+                        <option value="{{ $sala->id }}" {{ $aluno->sala_id == $sala->id ? 'selected' : '' }}>{{ $sala->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
 
                   <!-- /.form-group -->
                   <div class="form-group">
-                    <label for="exampleInputName1">Telefone </label>
-                    <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone">
+                    <label for="telefone">Telefone </label>
+                    <input type="text" value="{{ $aluno->telefone }}" class="form-control" name="telefone" id="telefone" placeholder="Telefone">
                   </div>  
 
                   <div class="form-group">
-                    <label for="exampleInputName1">Morada </label>
-                    <input type="text" class="form-control" name="morada" id="morada" placeholder="Rua 21 bairro azul">
+                    <label for="morada">Morada </label>
+                    <input type="text" value="{{ $aluno->morada }}" class="form-control" name="morada" id="morada" placeholder="Rua 21 bairro azul">
                   </div>  
                 <!-- /.col -->
                 <div class="col-md-12">
                   <!-- Date dd/mm/yyyy -->
                   <div class="form-group">
-                    <label>Data de Nascimento</label>
+                    <label for="data_nascimento">Data de Nascimento</label>
   
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                       </div>
-                      <input type="date" class="form-control" name="data_nascimento" id="data_nascimento" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                      <input type="date" value="{{ $aluno->data_nascimento }}" class="form-control" name="data_nascimento" id="data_nascimento" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
                     </div>
                   </div>
                 </div>
@@ -93,8 +101,8 @@
               <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                    <label for="exampleInputName1">Nome Pai</label>
-                        <input type="text" class="form-control" name="nome_pai" id="nome_pai" placeholder="Nome completo do pai">
+                    <label for="nome_pai">Nome Pai</label>
+                        <input type="text" value="{{ $aluno->nome_pai }}" class="form-control" name="nome_pai" id="nome_pai" placeholder="Nome completo do pai">
                     </div>
                     </div>
                     <!-- /.form-group -->
@@ -103,8 +111,8 @@
                 <div class="col-md-12">
                   
                   <div class="form-group">
-                    <label for="exampleInputName1">Nome Mãe</label>
-                    <input type="text" class="form-control" name="nome_mae" id="nome_mae" placeholder="Nome completo da mãe">
+                    <label for="nome_mae">Nome Mãe</label>
+                    <input type="text" value="{{ $aluno->nome_mae }}" class="form-control" name="nome_mae" id="nome_mae" placeholder="Nome completo da mãe">
                   </div>
                 </div>
               </div>

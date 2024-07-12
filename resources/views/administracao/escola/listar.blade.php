@@ -56,46 +56,36 @@
             <thead>
               <tr>
                 <th style="width: 15%">ID</th>
-                <th style="width: 15%">ID Responsável</th>
                 <th style="width: 15%">Nome</th>
+                <th style="width: 15%">Director Geral</th>
                 <th style="width: 15%">NIF</th>
-                <th>ID Tipologia</th>
-                <th style="width: 15%">ID Designação</th>
-                <th style="width: 15%" class="text-center">ID Tipo de Escola</th>
-                <th style="width: 15%" class="text-center">ID Subsistema</th>
-                <th style="width: 15%" class="text-center">ID País</th>
-                <th style="width: 15%" class="text-center">ID Cidade</th>
-                <th style="width: 15%" class="text-center">ID Município</th>
-                <th style="width: 15%" class="text-center">Bairro</th>
+                <th style="width: 15%">Subsistema</th>
+                <th style="width: 15%">Tipologia</th>
+                <th style="width: 15%" class="text-center">Município</th>
+                <th style="width: 15%" class="text-center">Província</th>
                 <th style="width: 15%" class="text-center">Opções</th>
               </tr>
             </thead>
             <tbody>
-              <!--<% escolas.forEach(escolas=>{ %>
+            @foreach ($escolas as $escola)
               <tr>
-                <td><%=escolas.id %></td>
-                <td><%=escolas.responsavel_id %></td>
-                <td><%=escolas.nome %></td>
-                <td><%=escolas.nif %></td>
-                <td ><%=escolas.tipologiA_id %></td>
-                <td ><%=escolas.designacao_id %></td>
-                <td ><%=escolas.tipoescola_id %></td>
-                  <td><%=escolas.subsistema_id %></td>
-                  <td><%=escolas.pais_id %></td>
-                  <td><%=escolas.cidade_id %></td>
-                  <td><%=escolas.municipio_id %></td>
-                  <td><%=escolas.bairro %></td>
-                </td>-->
+                <td>{{ $escola->nome }}</td>
+                <td>{{ $escola->director }}</td>
+                <td>{{ $escola->subsistema->nome }}</td>
+                <td>{{ $escola->tipologia->nome }}</td>
+                <td >{{ $escola->municipio->nome }}</td>
+                <td >{{ $escola->provincia->nome }}</td>
+                </td>
                 <td class="project-actions text-right">
                   <a class="btn btn-info btn-sm" href="/escola/edit">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="/admin/escola/del/<%=escolas.id %>">
+                  <a class="btn btn-danger btn-sm" href="#">
                     <i class="fas fa-trash"> </i>
                   </a>
                 </td>
               </tr>
-              <!--<%}) %>-->
+              @endforeach
             </tbody>
           </table>
         </div>

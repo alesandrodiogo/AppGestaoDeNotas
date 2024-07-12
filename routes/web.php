@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\EscolaController;
+use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\NotaController;
+use App\Http\Controllers\ProvinciaController;
 use App\Models\Nota;
 
 Route::get('/', function () {
@@ -152,41 +155,23 @@ Route::get('/administracao', function(){
     return view('administracao.index');
 });
 
-Route::get('/escolas', function(){
-    return view('administracao.escola.listar');
-});
+Route::get('/escolas', [EscolaController::class, 'index']);
+Route::get('/escola/add', [EscolaController::class, 'create']);
+Route::post('/escola/store', [EscolaController::class, 'store']);
+Route::get('/escola/edit/{id}', [EscolaController::class, 'edit']);
+Route::put('/escola/update/{id}', [EscolaController::class, 'update']);
 
-Route::get('/escola/add', function(){
-    return view('administracao.escola.adicionar');
-});
+Route::get('/provincias', [ProvinciaController::class, 'index']);
+Route::get('/provincias/add', [ProvinciaController::class, 'create']);
+Route::post('/provincias/store', [ProvinciaController::class, 'store']);
+Route::get('/provincias/edit/{id}', [ProvinciaController::class, 'edit']);
+Route::put('/provincias/update/{id}', [ProvinciaController::class, 'update']);
 
-Route::get('/escola/edit', function(){
-    return view('administracao.escola.editar');
-});
-
-Route::get('/provincias', function(){
-    return view('administracao.provincia.listar');
-});
-
-Route::get('/provincias/add', function(){
-    return view('administracao.provincia.adicionar');
-});
-
-Route::get('/provincias/edit', function(){
-    return view('administracao.provincia.editar');
-});
-
-Route::get('/municipios', function(){
-    return view('administracao.municipio.listar');
-});
-
-Route::get('/municipios/add', function(){
-    return view('administracao.municipio.adicionar');
-});
-
-Route::get('/municipios/edit', function(){
-    return view('administracao.municipio.editar');
-});
+Route::get('/municipios', [MunicipioController::class, 'index']);
+Route::get('/municipios/add', [MunicipioController::class, 'create']);
+Route::post('/municipios/store', [MunicipioController::class, 'store']);
+Route::get('/municipios/edit/{id}', [MunicipioController::class, 'edit']);
+Route::put('/municipios/update/{id}', [MunicipioController::class, 'update']);
 
 Route::get('/subsistemas', function(){
     return view('administracao.subsistema.listar');

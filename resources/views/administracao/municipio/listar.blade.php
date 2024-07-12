@@ -55,19 +55,18 @@
           <table class="table table-striped projects">
             <thead>
               <tr>
-                <th style="width: 15%">Id</th>
+              <th style="width: 15%">ID</th>
                 <th style="width: 15%">Nome</th>
-                <th style="width: 15%">provincia</th>
                 <th style="width: 15%" class="text-center">Opções</th>
               </tr>
             </thead>
             <tbody>
+            @foreach ($municipios as $municipio)
               <tr>
-                <td>Jesus Afonso</td>
-                <td>Created 01.01.2019</td>
-                <td>01.01.2019</td>
+              <td>{{ $municipio->id }}</td>
+                <td>{{ $municipio->nome }}</td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-info btn-sm" href="/municipios/edit">
+                  <a class="btn btn-info btn-sm" href="/municipios/edit/{{$municipio->id}}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
                   <a class="btn btn-danger btn-sm" href="#">

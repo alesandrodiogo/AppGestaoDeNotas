@@ -32,7 +32,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputName1">Aluno</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
+                  <label for="aluno_id">Aluno</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="aluno_id" style="width: 100%;">
                   @foreach ($alunos as $aluno)
                   <option value="{{ $aluno->id }}" {{ $nota->aluno_id == $aluno->id ? 'selected' : '' }}>{{ $aluno->nome }}</option>
@@ -40,7 +40,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputName1">Ano lectivo</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
+                  <label for="anolectivo_id">Ano lectivo</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="anolectivo_id" style="width: 100%;">
                   @foreach ($anosLectivos as $anoLectivo)
                   <option value="{{ $anoLectivo->id }}" {{ $nota->ano_lectivo_id == $anoLectivo->id ? 'selected' : '' }}>{{ $anoLectivo->nome }}</option>
@@ -48,7 +48,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputName1">Disciplina</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
+                  <label for="disciplina_id">Disciplina</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
                   <select class="form-control select2" name="disciplina_id" style="width: 100%;">
                   @foreach ($disciplinas as $disciplina)
                   <option value="{{ $disciplina->id }}" {{ $nota->disciplina_id == $disciplina->id ? 'selected' : '' }}>{{ $disciplina->nome }}</option>
@@ -56,40 +56,40 @@
                   </select>
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">MT1</label>
-                        <input type="number" name="mt1" class="form-control" id="mt1" placeholder="">
+                  <label for="mt1">MT1</label>
+                        <input type="number" value="{{ $nota->mt1 }}" name="mt1" class="form-control" id="mt1" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">MT2</label>
-                        <input type="number" name="mt2" class="form-control" id="mt2" placeholder="">
+                 <label for="mt2">MT2</label>
+                        <input type="number" value="{{ $nota->mt2 }}" name="mt2" class="form-control" id="mt2" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">MT3</label>
-                        <input type="number" name="mt3" class="form-control" id="mt3" placeholder="">
+                 <label for="mt3">MT3</label>
+                        <input type="number" value="{{ $nota->mt3 }}" name="mt3" class="form-control" id="mt3" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">MAC</label>
-                        <input type="number" name="mac" class="form-control" id="mac" placeholder="">
+                 <label for="mac">MAC</label>
+                        <input type="number" value="{{ $nota->mac }}" name="mac" class="form-control" id="mac" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">NPP</label>
-                        <input type="number" name="npp" class="form-control" id="npp" placeholder="">
+                 <label for="npp">NPP</label>
+                        <input type="number" value="{{ $nota->npp }}" name="npp" class="form-control" id="npp" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">NPT</label>
-                        <input type="number" name="npt" class="form-control" id="npt" placeholder="">
+                 <label for="npt">NPT</label>
+                        <input type="number" value="{{ $nota->npt }}" name="npt" class="form-control" id="npt" placeholder="">
                 </div>
               </div>
               <!-- /.col -->
               <div class="col-md-6">
                 
               <div class="form-group">
-                 <label for="exampleInputName1">MFD</label>
-                        <input type="number" disabled name="mfd" class="form-control" id="mfd" placeholder="">
+                 <label for="mfd">MFD</label>
+                        <input type="number" value="{{ $nota->mfd }}" disabled name="mfd" class="form-control" id="mfd" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">MT</label>
-                        <input type="number" disabled name="mt" class="form-control" id="mt" placeholder="">
+                 <label for="mt">MT</label>
+                        <input type="number" value="{{ $nota->mt }}" disabled name="mt" class="form-control" id="mt" placeholder="">
                 </div>
               </div>
              

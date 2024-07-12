@@ -24,17 +24,14 @@
              
             </div>
           </div>
+          <form action="/provincias/update/{{$provincia->id}}" method="POST">
           <!-- /.card-header -->
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">Id</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Nome">
-                </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">Nome</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Descrição">
+                  <label for="nome">Nome</label>
+                        <input type="text" name="nome" value="{{ $provincia->nome }} class="form-control" id="nome" placeholder="Descrição">
                 </div>
               </div>
              
@@ -49,7 +46,7 @@
            </div>
           </div>
           <!-- /.card-body -->
-       
+          </form>
         </div>
          <!-- /.row 1-->
          

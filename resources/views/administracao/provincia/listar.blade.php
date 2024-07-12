@@ -61,11 +61,11 @@
               </tr>
             </thead>
             <tbody>
+            @foreach ($provincias as $provincia)
               <tr>
-                <td>Ld</td>
-                <td>Luanda</td>
+              <td>{{ $provincia->nome }}</td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-info btn-sm" href="/provincias/edit">
+                  <a class="btn btn-info btn-sm" href="/provincias/edit/$provincia->id">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
                   <a class="btn btn-danger btn-sm" href="#">

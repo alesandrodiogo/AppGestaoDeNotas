@@ -26,22 +26,19 @@
              
             </div>
           </div>
-       <form action="/admin/escola/add" enctype="multipart/form-data" method="POST">
+       <form action="/escola/store" method="POST">
            <!-- /.card-header -->
+           @csrf
            <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">Rensponsável</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
-                  <select class="form-control select2" name="responsavel" style="width: 100%;">
-                    <!--<% responsavel.forEach(responsavel=>{ %>-->
-                    <option selected="selected" value="<%=responsavel.id %>"><%=responsavel.nome %></option>
-                    <!--<%}) %>-->
-                  </select>
-                </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="exampleInputName1" placeholder="Nome">
+                  <label for="nome">Nome</label>
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome completo">
+                </div>
+                <div class="form-group">
+                  <label for="director">Director</label>
+                        <input type="text" name="director" class="form-control" id="director" placeholder="Nome completo">
                 </div>
               </div>
               <!-- /.col -->
@@ -50,106 +47,43 @@
                  <label for="exampleInputName1">NIF</label>
                         <input type="text" name="nif" class="form-control" id="exampleInputName1" placeholder="NIF">
                 </div>
-                <!-- /.form-group -->
                 <div class="form-group">
-                  <label for="exampleInputName1">Tipologia</label>
-                  <select class="form-control select2" name="tipologia" style="width: 100%;">
-                    <!--<% tipologia.forEach(tipologia=>{ %>-->
-                    <option selected="selected" value="<%=tipologia.id %>"><%=tipologia.descricao %></option>
-                    <!--<%}) %>-->
+                  <label for="subsistema_id">Subsistema</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
+                  <select class="form-control select2" name="subsistema_id" id="subsistema_id" style="width: 100%;">
+                  @foreach ($subsistemas as $subsistema)
+                    <option selected="selected" value="{{ $subsistema->id }}">{{ $subsistema->nome }}</option>
+                    @endforeach
                   </select>
                 </div>
-
-               
+                <!-- /.form-group -->
+                <div class="form-group">
+                <label for="tipologia_id">Tipologia</label>
+                <select name="tipologia_id" id="tipologia_id" class="form-control" required>
+                    @foreach ($tipologias as $tipologia)
+                        <option value="{{ $tipologia->id }}">{{ $tipologia->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
                 <!-- /.form-group -->
               </div>
              
              <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputName1">Designação</label>
-                <select class="form-control select2" name="designacao" style="width: 100%;">
-                  <!--<% designacao.forEach(designacao=>{ %>-->
-                  <option selected="selected" value="<%=designacao.id %>"><%=designacao.descricao %></option>
-                  <!--<%}) %>-->
+             <div class="form-group">
+                <label for="municipio_id">Município</label>
+                <select name="municipio_id" id="municipio_id" class="form-control" required>
+                    @foreach ($municipios as $municipio)
+                        <option value="{{ $municipio->id }}">{{ $municipio->nome }}</option>
+                    @endforeach
                 </select>
-              </div>
-                 
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">Tipo de Escola</label>
-                  <select class="form-control select2" name="tipoescola" style="width: 100%;">
-                    <!--<% tipoescolas.forEach(tipoescolas=>{ %>-->
-                    <option selected="selected" value="<%=tipoescolas.id %>"><%=tipoescolas.descricao %></option>
-                    <!--<%}) %>-->
-                  </select>
-                </div>
-                 
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label> Subsistema</label>
-                  <select class="select2" name="subsistema" multiple="multiple" data-placeholder="Subsistema" style="width: 100%;">
-                    <!--<% subsistema.forEach(subsistema=>{ %>-->
-                    <option value="<%=subsistema.id %>"><%=subsistema.nome %></option>
-                    <!--<%}) %>-->
-                  </select>
-                </div>
-                 
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">País</label>
-                  <select class="form-control select2" name="pais" style="width: 100%;">
-                    <!--<% pais.forEach(pais=>{ %>-->
-                    <option value="<%=pais.id %>"><%=pais.nome %></option>
-                    <!--<%}) %>-->
-                  </select>
-                </div>
-                 
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">provincia</label>
-                  <select class="form-control select2" name="provincia" style="width: 100%;">
-                    <!--<% provincia.forEach(provincia=>{ %>-->
-                    <option selected="selected" value="<%=provincia.id %>"><%=provincia.nome %></option>
-                    <!--<%}) %>-->
-                  </select>
-                </div>
-                 
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">Município</label>
-                  <select class="form-control select2" name="municipio" style="width: 100%;">
-                    <!--<% municipio.forEach(municipio=>{ %>-->
-                    <option selected="selected" value="<%=municipio.id %>"><%=municipio.nome %></option>
-                    <!--<%}) %>-->
-                  </select>
-                </div>
-                 
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-               
-                <!-- /.form-group -->
-                  <div class="form-group">
-                  <label for="exampleInputName1">Bairro</label>
-                        <input type="text" name="bairro" class="form-control" id="exampleInputName1" placeholder="Bairro">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">Adicionar logotipo</label>
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Escolha um logo</label>
-                    </div>
-                  </div>
-                </div>
-               
-                <!-- /.form-group -->
+            </div>
+            <div class="form-group">
+                <label for="provincia_id">Província</label>
+                <select name="provincia_id" id="provincia_id" class="form-control" required>
+                    @foreach ($provincias as $provincia)
+                        <option value="{{ $provincia->id }}">{{ $provincia->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
               </div>
                <div class="form-group">
                 <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>

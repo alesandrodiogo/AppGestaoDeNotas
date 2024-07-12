@@ -23,34 +23,16 @@
              
             </div>
           </div>
+          <form action="/municipios/store" method="POST">
+            @csrf
           <!-- /.card-header -->
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">Id</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Id">
-                </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">Nome</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Nome">
+                  <label for="nome">Nome</label>
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
                 </div>
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Selecione a Provincia</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Luanda</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
-                <!-- /.form-group -->
               </div>
              
               </div>
@@ -63,7 +45,7 @@
            </div>
           </div>
           <!-- /.card-body -->
-       
+          </form>
         </div>
          <!-- /.row 1-->
          
