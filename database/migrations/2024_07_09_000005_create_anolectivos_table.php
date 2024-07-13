@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ano_lectivos', function (Blueprint $table) {
+        Schema::create('anolectivos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ano_lectivos');
+        Schema::dropIfExists('anolectivos');
     }
 };

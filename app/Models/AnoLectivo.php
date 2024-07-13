@@ -14,6 +14,8 @@ class AnoLectivo extends Model
         'nome',
     ];
 
+    protected $table = 'anolectivos';
+
     public function notas() : HasMany
     {
         return $this->hasMany(Nota::class);

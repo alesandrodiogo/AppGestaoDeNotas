@@ -48,7 +48,7 @@
                         ID
                     </th>
                     <th style="width: 15%">
-                       Descrição
+                       Nome
                     </th>
                     <th style="width: 15%" class="text-center">
                       Opções
@@ -56,28 +56,32 @@
                 </tr>
             </thead>
             <tbody>
-              <!--<% turma.forEach(turma=>{ %>-->
+            @foreach($anoLectivos as $anoletivo)
                 <tr>
                     <td>
-                      <!--<%=turma.id %>-->
+                    {{ $anoletivo->id }}
                     </td>
                     <td class="project-state">
-                      <!--<%=turma.descricao %>-->
+                    {{ $anoletivo->nome }}
                     </td>
                     <td class="project-actions text-right">
                         
-                        <a class="btn btn-info btn-sm" href="/ano_lectivo/edit">
+                        <a class="btn btn-info btn-sm" href="/ano_lectivo/edit/{{$anoletivo->id}}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
                         </a>
-                        <a class="btn btn-danger btn-sm" href="#">
+                        <form action="/ano_lectivo/destroy/{{$anoletivo->id}}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash">
                             </i>
-                        </a>
+                            </button>
+                            </form>
                     </td>
                 </tr>
-               <!-- <%}) %>-->
+                @endforeach
             </tbody>
         </table>
       </div>

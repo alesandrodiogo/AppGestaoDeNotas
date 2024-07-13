@@ -107,9 +107,10 @@ Route::get('/turno/edit', function(){
 
 Route::get('/ano_lectivo', [AnoLectivoController::class, 'index']);
 Route::get('/ano_lectivo/add', [AnoLectivoController::class, 'create']);
-Route::post('/escola/store', [AnoLectivoController::class, 'store']);
+Route::post('/ano_lectivo/store', [AnoLectivoController::class, 'store']);
 Route::get('/ano_lectivo/edit/{id}', [AnoLectivoController::class, 'edit']);
 Route::put('/ano_lectivo/update/{id}', [AnoLectivoController::class, 'update']);
+Route::delete('/ano_lectivo/destroy/{id}', [AnoLectivoController::class, 'destroy']);
 
 //FIM DAS ROTAS DA GESTAO
 

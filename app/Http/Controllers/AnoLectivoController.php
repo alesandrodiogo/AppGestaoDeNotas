@@ -25,7 +25,7 @@ class AnoLectivoController extends Controller
         ]);
 
         AnoLectivo::create($request->all());
-        return redirect()->route('gestao.anolectivo.listar')
+        return redirect('/ano_lectivo')
         ->with('success', 'Ano Lectivo criado com sucesso.');
     }
 
@@ -34,27 +34,32 @@ class AnoLectivoController extends Controller
         return view('anoLectivos.show', compact('anoLectivo'));
     }
 
-    public function edit(AnoLectivo $anoLectivo)
+    public function edit($id)
     {
-        return view('gestao.anolectivo.editar', compact('anoLectivo'));
+        $anoLectivo = AnoLectivo::findOrFail($id);
+    return view('gestao.anolectivo.editar', compact('anoLectivo'));
     }
 
-    public function update(Request $request, AnoLectivo $anoLectivo)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
-
+    
+        $anoLectivo = AnoLectivo::findOrFail($id);
         $anoLectivo->update($request->all());
-        return redirect()->route('gestao.anolectivo.listar')
-        ->with('success', 'Ano Lectivo atualizado com sucesso.');
+    
+        return redirect('/ano_lectivo')
+            ->with('success', 'Ano Lectivo atualizado com sucesso.');
     }
 
-    public function destroy(AnoLectivo $anoLectivo)
+    public function destroy($id)
     {
-        $anoLectivo->delete();
-        return redirect()->route('gestao.anolectivo.listar')
-        ->with('success', 'Ano Lectivo excluído com sucesso.');
+        $anolectivo = AnoLectivo::findOrFail($id);
+        $anolectivo->delete();
+
+        return redirect('/ano_lectivo')
+            ->with('success', 'Ano lectivo deletado com sucesso.');
     }
 
 }

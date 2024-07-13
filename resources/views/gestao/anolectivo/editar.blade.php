@@ -26,13 +26,15 @@
             </div>
           </div>
           <!-- /.card-header -->
-          <form action="/gestao/turma/atualizar" method="POST">
+          <form action="/ano_lectivo/update/{{$anoLectivo->id}}" method="POST">
+          @csrf
+          @method('PUT')
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="exampleInputName1">Descrição</label>
-                          <input type="text" name="descricao" value="" class="form-control" id="exampleInputName1" placeholder="Descrição">
+                    <label for="nome">Nome</label>
+                          <input type="text" value="{{ $anoLectivo->nome }}" name="nome" class="form-control" id="nome" placeholder="Nome">
                           <input type="hidden" name="id" value="">
                   </div>
                 </div>
