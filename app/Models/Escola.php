@@ -14,6 +14,7 @@ class Escola extends Model
     protected $fillable = [
         'nome',
         'director',
+        'nif',
         'subsistema_id',
         'tipologia_id',
         'municipio_id',

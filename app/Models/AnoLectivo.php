@@ -10,6 +10,10 @@ class AnoLectivo extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome',
+    ];
+
     public function notas() : HasMany
     {
         return $this->hasMany(Nota::class);

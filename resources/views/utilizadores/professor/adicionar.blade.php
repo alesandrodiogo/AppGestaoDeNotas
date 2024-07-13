@@ -23,50 +23,26 @@
              
             </div>
           </div>
+          <form action="/user_profile_prof/store" method="POST">
+            @csrf
           <!-- /.card-header -->
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputName1">Nome</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nome">
+                  <label for="nome">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">Endereço</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Descrição">
+                  <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="usuario@exemplo.com">
                 </div>
               </div>
               <!-- /.col -->
               <div class="col-md-6">
                 <div class="form-group">
-                 <label for="exampleInputName1">Telefone</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Telefone">
-                </div>
-                <!-- /.form-group -->
-              
-                  <div class="form-group">
-                  <label for="exampleInputName1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputName1" placeholder="Email">
-                </div>
-               
-                <!-- /.form-group -->
-              </div>
-             
-             <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputName1">Senha</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Senha">
-                </div>
-                 
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-               
-                <!-- /.form-group -->
-              
-                  <div class="form-group">
-                  <label for="exampleInputName1">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Confirmar Senha">
+                 <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" name="telefone" id="telefone" placeholder="9xxxxxx">
                 </div>
                
                 <!-- /.form-group -->
@@ -80,7 +56,7 @@
            </div>
           </div>
           <!-- /.card-body -->
-       
+          </form>
         </div>
          <!-- /.row 1-->
          

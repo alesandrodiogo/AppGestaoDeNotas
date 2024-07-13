@@ -23,17 +23,15 @@
              
             </div>
           </div>
+          <form action="/classe/store" method="POST">
+          @csrf
           <!-- /.card-header -->
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputName1">Nome</label>
-                        <input type="password" class="form-control" id="exampleInputName1" placeholder="Nome">
-                </div>
-                 <div class="form-group">
-                  <label for="exampleInputName1">Data Criação</label>
-                        <input type="date" class="form-control" id="exampleInputName1" placeholder="Data">
+                  <label for="nome">Nome</label>
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
                 </div>
               </div>
               <!-- /.col -->
@@ -46,7 +44,7 @@
            </div>
           </div>
           <!-- /.card-body -->
-       
+          </form>
         </div>
          <!-- /.row 1-->
          

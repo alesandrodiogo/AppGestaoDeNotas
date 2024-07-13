@@ -10,12 +10,12 @@ class SalaController extends Controller
     public function index()
     {
         $salas = Sala::all();
-        return view('sala.sala.listar', compact('salas'));
+        return view('gestao.sala.listar', compact('salas'));
     }
 
     public function create()
     {
-        return view('sala.sala.adicionar');
+        return view('gestao.sala.adicionar');
     }
 
     public function store(Request $request)
@@ -25,7 +25,7 @@ class SalaController extends Controller
         ]);
 
         Sala::create($request->all());
-        return redirect()->route('sala.sala.listar')
+        return redirect()->route('gestao.sala.listar')
         ->with('success', 'Sala criada com sucesso.');
     }
 
@@ -36,7 +36,7 @@ class SalaController extends Controller
 
     public function edit(Sala $sala)
     {
-        return view('sala.sala.editar', compact('sala'));
+        return view('gestao.sala.editar', compact('sala'));
     }
 
     public function update(Request $request, Sala $sala)
@@ -46,14 +46,14 @@ class SalaController extends Controller
         ]);
 
         $sala->update($request->all());
-        return redirect()->route('sala.sala.listar')
+        return redirect()->route('gestao.sala.listar')
         ->with('success', 'Sala atualizada com sucesso.');
     }
 
     public function destroy(Sala $sala)
     {
         $sala->delete();
-        return redirect()->route('sala.sala.listar')
+        return redirect()->route('gestao.sala.listar')
         ->with('success', 'Sala excluída com sucesso.');
     }
 }

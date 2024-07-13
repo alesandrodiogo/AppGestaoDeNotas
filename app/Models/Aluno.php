@@ -11,6 +11,18 @@ class Aluno extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome_completo',
+        'numero_estudante',
+        'nome_pai',
+        'nome_mae',
+        'telefone',
+        'turma_id',
+        'sala_id',
+        'data_nascimento',
+        'morada',
+    ];
+
     protected $dates = ['data_nascimento'];
 
     public function turma() : BelongsTo

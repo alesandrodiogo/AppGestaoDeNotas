@@ -3,10 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\AnoLectivoController;
+use App\Http\Controllers\ClasseController;
+use App\Http\Controllers\CursoController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\EscolaController;
 use App\Http\Controllers\MunicipioController;
+use App\Http\Controllers\NivelAcademicoController;
 use App\Http\Controllers\NotaController;
+use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\SalaController;
 use App\Http\Controllers\SubsistemaController;
@@ -31,45 +35,27 @@ Route::get('/user_profile_aluno/edit/{id}', [AlunoController::class, 'edit']);
 Route::put('/user_profile_aluno/update/{id}', [AlunoController::class, 'update']);
 Route::get('/user_profile_aluno/ver/{id}', [AlunoController::class, 'show']);
 
-Route::get('/user_profile_prof', function(){
-    return view('utilizadores.professor.listar');
-});
-
-Route::get('/user_profile_prof/add', function(){
-    return view('utilizadores.professor.adicionar');
-});
-
-Route::get('/user_profile_prof/edit', function(){
-    return view('utilizadores.professor.editar');
-});
+Route::get('/user_profile_prof', [ProfessorController::class, 'index']);
+Route::get('/user_profile_prof/add', [ProfessorController::class, 'create']);
+Route::post('/user_profile_prof/store', [ProfessorController::class, 'store']);
+Route::get('/user_profile_prof/edit/{id}', [ProfessorController::class, 'edit']);
+Route::put('/user_profile_prof/update/{id}', [ProfessorController::class, 'update']);
 
 Route::get('/utilizadores', function(){
     return view('utilizadores.index');
 });
 
-Route::get('/classes', function(){
-    return view('gestao.classe.listar');
-});
+Route::get('/classes', [ClasseController::class, 'index']);
+Route::get('/classe/add', [ClasseController::class, 'create']);
+Route::post('/classe/store', [ClasseController::class, 'store']);
+Route::get('/classe/edit/{id}', [ClasseController::class, 'edit']);
+Route::put('/classe/update/{id}', [ClasseController::class, 'update']);
 
-Route::get('/classe/add', function(){
-    return view('gestao.classe.adicionar');
-});
-
-Route::get('/classe/edit', function(){
-    return view('gestao.classe.editar');
-});
-
-Route::get('/cursos', function(){
-    return view('gestao.cursos.listar');
-});
-
-Route::get('/curso/add', function(){
-    return view('gestao.cursos.adicionar');
-});
-
-Route::get('/curso/edit', function(){
-    return view('gestao.cursos.editar');
-});
+Route::get('/cursos', [CursoController::class, 'index']);
+Route::get('/curso/add', [CursoController::class, 'create']);
+Route::post('/curso/store', [CursoController::class, 'store']);
+Route::get('/curso/edit/{id}', [CursoController::class, 'edit']);
+Route::put('/curso/update/{id}', [CursoController::class, 'update']);
 
 Route::get('/disciplinas', [DisciplinaController::class, 'index']);
 Route::get('/disciplina/add', [DisciplinaController::class, 'create']);
@@ -89,17 +75,11 @@ Route::get('/epoca/edit', function(){
     return view('gestao.epoca.editar');
 });
 
-Route::get('/nivel_academico', function(){
-    return view('gestao.nivel.listar');
-});
-
-Route::get('/nivel_academico/add', function(){
-    return view('gestao.nivel.adicionar');
-});
-
-Route::get('/nivel_academico/edit', function(){
-    return view('gestao.nivel.editar');
-});
+Route::get('/nivel_academico', [NivelAcademicoController::class, 'index']);
+Route::get('/nivel_academico/add', [NivelAcademicoController::class, 'create']);
+Route::post('/nivel_academico/store', [NivelAcademicoController::class, 'store']);
+Route::get('/nivel_academico/edit/{id}', [NivelAcademicoController::class, 'edit']);
+Route::put('/nivel_academico/update/{id}', [NivelAcademicoController::class, 'update']);
 
 Route::get('/salas', [SalaController::class, 'index']);
 Route::get('/sala/add', [SalaController::class, 'create']);

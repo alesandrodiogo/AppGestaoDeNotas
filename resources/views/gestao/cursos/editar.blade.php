@@ -24,17 +24,16 @@
              
             </div>
           </div>
+          <form action="/curso/edit/{{$curso->id}}" method="POST">
+            @csrf
+            @method('PUT')
           <!-- /.card-header -->
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputName1">Nome</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nome">
-                </div>
-                 <div class="form-group">
-                  <label for="exampleInputName1">Data de Criação</label>
-                        <input type="date" class="form-control" id="exampleInputName1" placeholder="Descrição">
+                  <label for="nome">Nome</label>
+                        <input type="text" value="{{ $curso->nome }}" class="form-control" name="nome" id="nome" placeholder="Nome">
                 </div>
               </div>
               <!-- /.col -->
@@ -48,7 +47,7 @@
            </div>
           </div>
           <!-- /.card-body -->
-       
+          </form>
         </div>
          <!-- /.row 1-->
          

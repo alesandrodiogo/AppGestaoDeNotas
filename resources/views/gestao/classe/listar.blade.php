@@ -44,10 +44,10 @@
             <thead>
                 <tr>
                     <th style="width: 15%">
-                        Nome
+                    ID
                     </th>
                     <th style="width: 15%">
-                       Data Criação
+                       Nome
                     </th>
                    
                     <th style="width:15%" class="text-center">
@@ -59,14 +59,13 @@
                 </tr>
             </thead>
             <tbody>
-           
-               
+            @foreach ($classes as $classe)
                 <tr>
                     <td>
-                        Jesus Afonso
+                    {{ $classe->id }}
                     </td>
                     <td> 
-                      Created 01.01.2019                       
+                    {{ $classe->nome }}                     
                     </td>
                     <td class="project-state">
                        <div class="form-group">
@@ -75,7 +74,7 @@
                     </td>
                     <td class="project-actions text-right">
                         
-                        <a class="btn btn-info btn-sm" href="/classe/edit">
+                        <a class="btn btn-info btn-sm" href="/classe/edit/{{ $classe->id }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
@@ -87,6 +86,7 @@
                         </a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
       </div>

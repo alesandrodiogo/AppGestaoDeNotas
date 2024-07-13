@@ -34,17 +34,18 @@
           <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
-              <th>Código</th>
+              <th>ID</th>
               <th>Nome</th>
               <th>Opção</th>
             </tr>
             </thead>
             <tbody>
+            @foreach ($niveisAcademicos as $nivelAcademico)
             <tr>
-              <td>I12DT</td>
-              <td>Jesus Afonso</td>
+              <td>{{ $nivelAcademico->id }}</td>
+              <td>{{ $nivelAcademico->nome }}</td>
               <td> 
-                <a class="btn btn-info btn-sm" href="/nivel_academico/edit">
+                <a class="btn btn-info btn-sm" href="/nivel_academico/edit/{{$nivelAcademico->id}}">
                 <i class="fas fa-pencil-alt"></i></a>
 
                 <a class="btn btn-danger btn-sm" href="#">
@@ -52,16 +53,8 @@
                 
               </td>
             </tr>
-            
-            
+            @endforeach
             </tbody>
-            <tfoot>
-            <tr>
-              <th>Código</th>
-              <th>Nome</th>
-              <th>Opção</th>
-            </tr>
-            </tfoot>
           </table>
         </div>
         <!-- /.card-body -->

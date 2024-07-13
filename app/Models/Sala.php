@@ -10,6 +10,11 @@ class Sala extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome',
+    ];
+
+
     public function aluno() : HasOne
     {
         return $this->hasOne(Aluno::class);

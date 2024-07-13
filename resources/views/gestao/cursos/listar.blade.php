@@ -43,14 +43,11 @@
             <thead>
                 <tr>
                     <th style="width: 15%">
-                        Nome
-                    </th>
-                    <th style="width: 15%">
-                       Data de Criação
+                        ID
                     </th>
                                      
                     <th style="width:15%" class="text-center">
-                        Estado
+                        Nome
                     </th>
                     <th style="width: 15%" class="text-center">
                       Opções
@@ -58,14 +55,13 @@
                 </tr>
             </thead>
             <tbody>
-           
-               
+            @foreach ($cursos as $curso)
                 <tr>
                     <td>
-                        Jesus Afonso
+                    {{ $curso->id }}
                     </td>
                     <td>
-                    Created 01.01.2019  
+                    {{ $curso->nome }}  
                     </td>
                     <td class="project-state">
                        <div class="form-group">
@@ -74,7 +70,7 @@
                     </td>
                     <td class="project-actions text-right">
                         
-                        <a class="btn btn-info btn-sm" href="/curso/edit">
+                        <a class="btn btn-info btn-sm" href="/curso/edit/{{ $curso->id }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
@@ -86,6 +82,7 @@
                         </a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
       </div>
