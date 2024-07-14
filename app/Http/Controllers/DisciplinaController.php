@@ -25,35 +25,40 @@ class DisciplinaController extends Controller
         ]);
 
         Disciplina::create($request->all());
-        return redirect()->route('gestao.disciplina.listar')
+        return redirect('/disciplinas')
         ->with('success', 'Disciplina criada com sucesso.');
     }
 
-    public function show(Disciplina $disciplina)
+    /*public function show(Disciplina $disciplina)
     {
         return view('disciplinas.show', compact('disciplina'));
-    }
+    }*/
 
-    public function edit(Disciplina $disciplina)
+    public function edit($id)
     {
+        $disciplina = Disciplina::findOrFail($id);
         return view('gestao.disciplina.editar', compact('disciplina'));
     }
 
-    public function update(Request $request, Disciplina $disciplina)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $disciplina = Disciplina::findOrFail($id);
         $disciplina->update($request->all());
-        return redirect()->route('gestao.disciplina.listar')
-        ->with('success', 'Disciplina atualizada com sucesso.');
+
+        return redirect('/disciplinas')
+            ->with('success', 'Disciplina atualizada com sucesso.');
     }
 
-    public function destroy(Disciplina $disciplina)
+    public function destroy($id)
     {
+        $disciplina = Disciplina::findOrFail($id);
         $disciplina->delete();
-        return redirect()->route('gestao.disciplina.listar')
-        ->with('success', 'Disciplina excluída com sucesso.');
+
+        return redirect('/disciplinas')
+            ->with('success', 'Disciplina excluída com sucesso.');
     }
 }

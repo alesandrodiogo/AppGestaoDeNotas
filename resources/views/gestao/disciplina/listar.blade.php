@@ -44,16 +44,10 @@
             <thead>
                 <tr>
                     <th style="width: 15%">
-                        Nome
+                        ID
                     </th>
                     <th style="width: 15%">
-                       classe
-                    </th>
-                    <th style="width: 15%">
-                        Curso
-                    </th>                    
-                    <th style="width:15%" class="text-center">
-                        Estado
+                       Nome
                     </th>
                     <th style="width: 15%" class="text-center">
                       Opções
@@ -61,37 +55,32 @@
                 </tr>
             </thead>
             <tbody>
-           
-               
+            @foreach ($disciplinas as $disciplina)
                 <tr>
                     <td>
-                        Matematica
+                    {{ $disciplina->id }}
                     </td>
                     <td>
-                      6ª Classe
-                    </td>
-                    <td>
-                       Curso
-                    </td>
-                    <td class="project-state">
-                       <div class="form-group">
-                      <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
-                     </div>
+                    {{ $disciplina->nome }}
                     </td>
                     <td class="project-actions text-right">
                         
-                        <a class="btn btn-info btn-sm" href="/disciplina/edit">
+                        <a class="btn btn-info btn-sm" href="/disciplina/edit/{{ $disciplina->id }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
                         </a>
-                        <a class="btn btn-danger btn-sm" href="#">
+                        <form action="/disciplina/destroy/{{ $disciplina->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash">
                             </i>
-                           
-                        </a>
+                            </button>
+                            </form>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
       </div>

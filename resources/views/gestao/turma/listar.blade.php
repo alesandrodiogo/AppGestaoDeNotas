@@ -48,7 +48,7 @@
                         ID
                     </th>
                     <th style="width: 15%">
-                       Descrição
+                       Nome
                     </th>
                     <th style="width: 15%" class="text-center">
                       Opções
@@ -56,28 +56,32 @@
                 </tr>
             </thead>
             <tbody>
-              <!--<% turma.forEach(turma=>{ %>-->
+            @foreach ($turmas as $turma)
                 <tr>
                     <td>
-                      <!--<%=turma.id %>-->
+                    {{ $turma->id }}
                     </td>
                     <td class="project-state">
-                      <!--<%=turma.descricao %>-->
+                    {{ $turma->nome }}
                     </td>
                     <td class="project-actions text-right">
                         
-                        <a class="btn btn-info btn-sm" href="/turma/edit">
+                        <a class="btn btn-info btn-sm" href="/turma/edit/{{$turma->id}}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
                         </a>
-                        <a class="btn btn-danger btn-sm" href="/gestao/turma/del/<%=turma.id %>">
+                        <form action="/turma/destroy/{{$turma->id}}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash">
                             </i>
-                        </a>
+                            </button>
+                            </form>
                     </td>
                 </tr>
-               <!-- <%}) %>-->
+                @endforeach
             </tbody>
         </table>
       </div>

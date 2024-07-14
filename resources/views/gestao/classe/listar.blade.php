@@ -79,11 +79,14 @@
                             </i>
                             
                         </a>
-                        <a class="btn btn-danger btn-sm" href="#">
+                        <form action="/classe/destroy/{{ $classe->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash">
                             </i>
-                           
-                        </a>
+                            </button>
+                            </form>
                     </td>
                 </tr>
                 @endforeach

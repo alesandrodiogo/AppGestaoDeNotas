@@ -25,35 +25,40 @@ class TurmaController extends Controller
         ]);
 
         Turma::create($request->all());
-        return redirect()->route('gestao.turma.listar')
+        return redirect('/turmas')
         ->with('success', 'Turma criada com sucesso.');
     }
 
-    public function show(Turma $turma)
+    /*public function show(Turma $turma)
     {
         return view('turmas.show', compact('turma'));
-    }
+    }*/
 
-    public function edit(Turma $turma)
+    public function edit($id)
     {
+        $turma = Turma::findOrFail($id);
         return view('gestao.turma.editar', compact('turma'));
     }
 
-    public function update(Request $request, Turma $turma)
-    {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-        ]);
+    public function update(Request $request, $id)
+{
+    $request->validate([
+        'nome' => 'required|string|max:255',
+    ]);
 
-        $turma->update($request->all());
-        return redirect()->route('gestao.turma.listar')
+    $turma = Turma::findOrFail($id);
+    $turma->update($request->all());
+
+    return redirect('/turmas')
         ->with('success', 'Turma atualizada com sucesso.');
-    }
+}
 
-    public function destroy(Turma $turma)
+    public function destroy($id)
     {
-        $turma->delete();
-        return redirect()->route('gestao.turma.listar')
+    $turma = Turma::findOrFail($id);
+    $turma->delete();
+
+    return redirect('/turmas')
         ->with('success', 'Turma excluída com sucesso.');
     }
 }

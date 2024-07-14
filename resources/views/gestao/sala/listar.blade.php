@@ -28,7 +28,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Lista de funcionário</h3>
+        <h3 class="card-title">Lista de Salas</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -44,22 +44,10 @@
             <thead>
                 <tr>
                     <th style="width: 15%">
-                        Nome
+                        ID
                     </th>
                     <th style="width: 15%">
-                       Email
-                    </th>
-                    <th style="width: 15%">
-                        Cargo
-                    </th>
-                    <th>
-                       Telefone
-                    </th>
-                     <th style="width: 15%">
-                        Endereço
-                    </th>
-                    <th style="width:15%" class="text-center">
-                        Estado
+                       Nome
                     </th>
                     <th style="width: 15%" class="text-center">
                       Opções
@@ -67,46 +55,32 @@
                 </tr>
             </thead>
             <tbody>
-           
-               
+            @foreach ($salas as $sala)
                 <tr>
                     <td>
-                        Jesus Afonso
+                    {{ $sala->id }}
                     </td>
                     <td>
-                       
-                            Created 01.01.2019
-                        
-                    </td>
-                    <td>
-                            01.01.2019
-                       
-                    </td>
-                    <td class="project_progress">
-                        3.000,00
-                    </td>
-                     <td class="project_progress">
-                        viana luanda sul/Mutamba
-                    </td>
-                    <td class="project-state">
-                       <div class="form-group">
-                      <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
-                     </div>
+                    {{ $sala->nome }}
                     </td>
                     <td class="project-actions text-right">
                         
-                        <a class="btn btn-info btn-sm" href="/sala/edit">
+                        <a class="btn btn-info btn-sm" href="/sala/edit/{{ $sala->id }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             
                         </a>
-                        <a class="btn btn-danger btn-sm" href="#">
+                        <form action="/sala/destroy/{{ $sala->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash">
                             </i>
-                           
-                        </a>
+                            </button>
+                            </form>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
       </div>

@@ -25,35 +25,42 @@ class SalaController extends Controller
         ]);
 
         Sala::create($request->all());
-        return redirect()->route('gestao.sala.listar')
+
+        return redirect('/salas')
         ->with('success', 'Sala criada com sucesso.');
     }
 
-    public function show(Sala $sala)
+    /*public function show(Sala $sala)
     {
         return view('salas.show', compact('sala'));
-    }
+    }*/
 
-    public function edit(Sala $sala)
+    public function edit($id)
     {
+        $sala = Sala::findOrFail($id);
         return view('gestao.sala.editar', compact('sala'));
     }
 
-    public function update(Request $request, Sala $sala)
+
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $sala = Sala::findOrFail($id);
         $sala->update($request->all());
-        return redirect()->route('gestao.sala.listar')
-        ->with('success', 'Sala atualizada com sucesso.');
+
+        return redirect('/salas')
+            ->with('success', 'Sala atualizada com sucesso.');
     }
 
-    public function destroy(Sala $sala)
+    public function destroy($id)
     {
+        $sala = Sala::findOrFail($id);
         $sala->delete();
-        return redirect()->route('gestao.sala.listar')
-        ->with('success', 'Sala excluída com sucesso.');
+
+        return redirect('/salas')
+            ->with('success', 'Sala excluída com sucesso.');
     }
 }

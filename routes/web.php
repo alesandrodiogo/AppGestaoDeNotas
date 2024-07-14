@@ -50,6 +50,7 @@ Route::get('/classe/add', [ClasseController::class, 'create']);
 Route::post('/classe/store', [ClasseController::class, 'store']);
 Route::get('/classe/edit/{id}', [ClasseController::class, 'edit']);
 Route::put('/classe/update/{id}', [ClasseController::class, 'update']);
+Route::delete('/classe/destroy/{id}', [ClasseController::class, 'destroy']);
 
 Route::get('/cursos', [CursoController::class, 'index']);
 Route::get('/curso/add', [CursoController::class, 'create']);
@@ -62,6 +63,7 @@ Route::get('/disciplina/add', [DisciplinaController::class, 'create']);
 Route::post('/disciplina/store', [DisciplinaController::class, 'store']);
 Route::get('/disciplina/edit/{id}', [DisciplinaController::class, 'edit']);
 Route::put('/disciplina/update/{id}', [DisciplinaController::class, 'update']);
+Route::delete('/disciplina/destroy/{id}', [DisciplinaController::class, 'destroy']);
 
 Route::get('/epocas', function(){
     return view('gestao.epoca.listar');
@@ -86,12 +88,14 @@ Route::get('/sala/add', [SalaController::class, 'create']);
 Route::post('/sala/store', [SalaController::class, 'store']);
 Route::get('/sala/edit/{id}', [SalaController::class, 'edit']);
 Route::put('/sala/update/{id}', [SalaController::class, 'update']);
+Route::delete('/sala/destroy/{id}', [SalaController::class, 'destroy']);
 
 Route::get('/turmas', [TurmaController::class, 'index']);
 Route::get('/turma/add', [TurmaController::class, 'create']);
 Route::post('/turma/store', [TurmaController::class, 'store']);
 Route::get('/turma/edit/{id}', [TurmaController::class, 'edit']);
 Route::put('/turma/update/{id}', [TurmaController::class, 'update']);
+Route::delete('/turma/destroy/{id}', [TurmaController::class, 'destroy']);
 
 Route::get('/turnos', function(){
     return view('gestao.turno.listar');

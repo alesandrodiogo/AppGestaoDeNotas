@@ -24,54 +24,26 @@
              
             </div>
           </div>
+          <form action="/disciplina/store" method="POST">
+            @csrf
           <!-- /.card-header -->
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputName1">Nome</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nome">
+                  <label for="nome">Nome</label>
+                        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
                 </div>
-                 <div class="form-group">
-                  <label>Classe</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-              </div>
-              <!-- /.col -->
-              
-             
-             <div class="col-md-6">
                 <div class="form-group">
-                  <label>Curso</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
                 </div>
-                 
-              </div>
-               <div class="form-group">
-                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
-              </div>
               
             </div>
             <!-- /.row -->
            </div>
           </div>
           <!-- /.card-body -->
-       
+          </form>
         </div>
          <!-- /.row 1-->
          

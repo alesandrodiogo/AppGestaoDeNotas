@@ -29,10 +29,10 @@ class AnoLectivoController extends Controller
         ->with('success', 'Ano Lectivo criado com sucesso.');
     }
 
-    public function show(AnoLectivo $anoLectivo)
+    /*public function show(AnoLectivo $anoLectivo)
     {
         return view('anoLectivos.show', compact('anoLectivo'));
-    }
+    }*/
 
     public function edit($id)
     {

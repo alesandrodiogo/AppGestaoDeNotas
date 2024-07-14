@@ -25,35 +25,41 @@ class ClasseController extends Controller
         ]);
 
         Classe::create($request->all());
-        return redirect()->route('gestao.classe.listar')
+        return redirect('/classes')
         ->with('success', 'Classe criada com sucesso.');
     }
 
-    public function show(Classe $classe)
+    /*public function show(Classe $classe)
     {
         return view('classes.show', compact('classe'));
-    }
+    }*/
 
-    public function edit(Classe $classe)
+    public function edit($id)
     {
+        $classe = Classe::findOrFail($id);
         return view('gestao.classe.editar', compact('classe'));
     }
 
-    public function update(Request $request, Classe $classe)
+
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $classe = Classe::findOrFail($id);
         $classe->update($request->all());
-        return redirect()->route('gestao.classe.listar')
-        ->with('success', 'Classe atualizada com sucesso.');
+
+        return redirect('/classes')
+            ->with('success', 'Classe atualizada com sucesso.');
     }
 
-    public function destroy(Classe $classe)
+    public function destroy($id)
     {
+        $classe = Classe::findOrFail($id);
         $classe->delete();
-        return redirect()->route('gestao.classe.listar')
-        ->with('success', 'Classe excluída com sucesso.');
+
+        return redirect('/classes')
+            ->with('success', 'Classe excluída com sucesso.');
     }
 }
