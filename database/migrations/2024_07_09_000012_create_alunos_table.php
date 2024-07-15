@@ -24,7 +24,7 @@ return new class extends Migration
             $table->foreignId('sala_id')->constrained()
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->dateTime('data_nascimento');
+            $table->date('data_nascimento');
             $table->string('morada');
             $table->timestamps();
         });

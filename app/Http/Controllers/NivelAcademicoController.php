@@ -25,35 +25,40 @@ class NivelAcademicoController extends Controller
         ]);
 
         NivelAcademico::create($request->all());
-        return redirect()->route('gestao.nivel.listar')
+        return redirect('/nivel_academico')
         ->with('success', 'Nível Acadêmico criado com sucesso.');
     }
 
-    public function show(NivelAcademico $nivelAcademico)
+    /*public function show(NivelAcademico $nivelAcademico)
     {
         return view('niveis_academicos.show', compact('nivelAcademico'));
-    }
+    }*/
 
-    public function edit(NivelAcademico $nivelAcademico)
+    public function edit($id)
     {
+        $nivelAcademico = NivelAcademico::findOrFail($id);
         return view('gestao.nivel.editar', compact('nivelAcademico'));
     }
 
-    public function update(Request $request, NivelAcademico $nivelAcademico)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $nivelAcademico = NivelAcademico::findOrFail($id);
         $nivelAcademico->update($request->all());
-        return redirect()->route('gestao.nivel.listar')
-        ->with('success', 'Nível Acadêmico atualizado com sucesso.');
+
+        return redirect('/nivel_academico')
+            ->with('success', 'Nível Acadêmico atualizado com sucesso.');
     }
 
-    public function destroy(NivelAcademico $nivelAcademico)
+    public function destroy($id)
     {
+        $nivelAcademico = NivelAcademico::findOrFail($id);
         $nivelAcademico->delete();
-        return redirect()->route('gestao.nivel.listar')
-        ->with('success', 'Nível Acadêmico excluído com sucesso.');
+
+        return redirect('/nivel_academico')
+            ->with('success', 'Nível Acadêmico excluído com sucesso.');
     }
 }

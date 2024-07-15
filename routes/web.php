@@ -34,12 +34,14 @@ Route::post('/alunos/store', [AlunoController::class, 'store']);
 Route::get('/user_profile_aluno/edit/{id}', [AlunoController::class, 'edit']);
 Route::put('/user_profile_aluno/update/{id}', [AlunoController::class, 'update']);
 Route::get('/user_profile_aluno/ver/{id}', [AlunoController::class, 'show']);
+Route::delete('/user_profile_aluno/destroy/{id}', [AlunoController::class, 'destroy']);
 
 Route::get('/user_profile_prof', [ProfessorController::class, 'index']);
 Route::get('/user_profile_prof/add', [ProfessorController::class, 'create']);
 Route::post('/user_profile_prof/store', [ProfessorController::class, 'store']);
 Route::get('/user_profile_prof/edit/{id}', [ProfessorController::class, 'edit']);
 Route::put('/user_profile_prof/update/{id}', [ProfessorController::class, 'update']);
+Route::delete('/user_profile_prof/destroy/{id}', [ProfessorController::class, 'destroy']);
 
 Route::get('/utilizadores', function(){
     return view('utilizadores.index');
@@ -57,6 +59,7 @@ Route::get('/curso/add', [CursoController::class, 'create']);
 Route::post('/curso/store', [CursoController::class, 'store']);
 Route::get('/curso/edit/{id}', [CursoController::class, 'edit']);
 Route::put('/curso/update/{id}', [CursoController::class, 'update']);
+Route::delete('/cursos/destroy/{id}', [CursoController::class, 'destroy']);
 
 Route::get('/disciplinas', [DisciplinaController::class, 'index']);
 Route::get('/disciplina/add', [DisciplinaController::class, 'create']);
@@ -82,6 +85,7 @@ Route::get('/nivel_academico/add', [NivelAcademicoController::class, 'create']);
 Route::post('/nivel_academico/store', [NivelAcademicoController::class, 'store']);
 Route::get('/nivel_academico/edit/{id}', [NivelAcademicoController::class, 'edit']);
 Route::put('/nivel_academico/update/{id}', [NivelAcademicoController::class, 'update']);
+Route::delete('/nivel_academico/destroy/{id}', [NivelAcademicoController::class, 'destroy']);
 
 Route::get('/salas', [SalaController::class, 'index']);
 Route::get('/sala/add', [SalaController::class, 'create']);
@@ -127,30 +131,35 @@ Route::get('/escola/add', [EscolaController::class, 'create']);
 Route::post('/escola/store', [EscolaController::class, 'store']);
 Route::get('/escola/edit/{id}', [EscolaController::class, 'edit']);
 Route::put('/escola/update/{id}', [EscolaController::class, 'update']);
+Route::delete('/escola/destroy/{id}', [EscolaController::class, 'destroy']);
 
 Route::get('/provincias', [ProvinciaController::class, 'index']);
 Route::get('/provincias/add', [ProvinciaController::class, 'create']);
 Route::post('/provincias/store', [ProvinciaController::class, 'store']);
 Route::get('/provincias/edit/{id}', [ProvinciaController::class, 'edit']);
 Route::put('/provincias/update/{id}', [ProvinciaController::class, 'update']);
+Route::delete('/provincias/destroy/{id}', [ProvinciaController::class, 'destroy']);
 
 Route::get('/municipios', [MunicipioController::class, 'index']);
 Route::get('/municipios/add', [MunicipioController::class, 'create']);
 Route::post('/municipios/store', [MunicipioController::class, 'store']);
 Route::get('/municipios/edit/{id}', [MunicipioController::class, 'edit']);
 Route::put('/municipios/update/{id}', [MunicipioController::class, 'update']);
+Route::delete('/municipios/destroy/{id}', [MunicipioController::class, 'destroy']);
 
 Route::get('/subsistemas', [SubsistemaController::class, 'index']);
 Route::get('/subsistema/add', [SubsistemaController::class, 'create']);
 Route::post('/subsistema/store', [SubsistemaController::class, 'store']);
 Route::get('/subsistema/edit/{id}', [SubsistemaController::class, 'edit']);
 Route::put('/subsistema/update/{id}', [SubsistemaController::class, 'update']);
+Route::delete('/subsistema/destroy/{id}', [SubsistemaController::class, 'destroy']);
 
 Route::get('/tipologia', [TipologiaController::class, 'index']);
 Route::get('/tipologia/add', [TipologiaController::class, 'create']);
 Route::post('/tipologia/store', [TipologiaController::class, 'store']);
 Route::get('/tipologia/edit/{id}', [TipologiaController::class, 'edit']);
 Route::put('/tipologia/update/{id}', [TipologiaController::class, 'update']);
+Route::delete('/tipologia/destroy/{id}', [TipologiaController::class, 'destroy']);
 
 Route::get('/notas', [NotaController::class, 'index']);
 Route::get('/nota/add', [NotaController::class, 'create']);

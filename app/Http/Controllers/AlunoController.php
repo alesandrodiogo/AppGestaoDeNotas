@@ -28,28 +28,30 @@ class AlunoController extends Controller
      public function store(Request $request)
      {
          $request->validate([
-             'nome' => 'required',
-             'numero' => 'required',
+             'nome_completo' => 'required',
+             'numero_estudante' => 'required',
              'nome_pai' => 'required',
              'nome_mae' => 'required',
              'telefone' => 'required',
              'turma_id' => 'required|exists:turmas,id',
              'sala_id' => 'required|exists:salas,id',
-             'data_nascimento' => 'required',
+             'data_nascimento' => 'required|date',
              'morada' => 'required'
          ]);
 
          $aluno = new Aluno();
-         $aluno->nome = $request->nome;
-         $aluno->numero = $request->numero;
+         $aluno->nome_completo = $request->nome_completo;
+         $aluno->numero_estudante = $request->numero_estudante;
          $aluno->nome_pai = $request->nome_pai;
          $aluno->nome_mae = $request->nome_mae;
          $aluno->telefone = $request->telefone;
          $aluno->turma_id = $request->turma_id;
          $aluno->sala_id = $request->sala_id;
+         $aluno->data_nascimento = $request->data_nascimento;
+         $aluno->morada = $request->morada;
          $aluno->save();
  
-         return redirect()->route('utilizadores.aluno.listar')
+         return redirect('/user_profile_aluno')
          ->with('success', 'Aluno criado com sucesso.');
     }
 
@@ -72,38 +74,31 @@ class AlunoController extends Controller
         // Atualizar um aluno específico
         public function update(Request $request, $id)
          {
-             $request->validate([
-            'nome' => 'required',
-            'numero' => 'required',
-            'nome_pai' => 'required',
-            'nome_mae' => 'required',
-            'telefone' => 'required',
-            'turma_id' => 'required|exists:turmas,id',
-            'sala_id' => 'required|exists:salas,id',
-            'data_nascimento' => 'required',
-            'morada' => 'required'
-         ]);
+        $request->validate([
+        'nome_completo' => 'required|string|max:255',
+        'numero_estudante' => 'required|integer',
+        'nome_pai' => 'required|string|max:255',
+        'nome_mae' => 'required|string|max:255',
+        'telefone' => 'required|string|max:15',
+        'turma_id' => 'required|exists:turmas,id',
+        'sala_id' => 'required|exists:salas,id',
+        'data_nascimento' => 'required|date',
+        'morada' => 'required|string|max:255',
+    ]);
 
-        $aluno = Aluno::findOrFail($id);
-        $aluno->nome = $request->nome;
-         $aluno->numero = $request->numero;
-         $aluno->nome_pai = $request->nome_pai;
-         $aluno->nome_mae = $request->nome_mae;
-         $aluno->telefone = $request->telefone;
-         $aluno->turma_id = $request->turma_id;
-         $aluno->sala_id = $request->sala_id;
-         $aluno->save();
+    $aluno = Aluno::findOrFail($id);
+    $aluno->update($request->all());
 
-        return redirect()->route('utilizadores.aluno.listar')
+    return redirect('/user_profile_aluno')
         ->with('success', 'Aluno atualizado com sucesso.');
-    }
+}
         // Deletar um aluno específico
         public function destroy($id)
         {
             $aluno = Aluno::findOrFail($id);
             $aluno->delete();
 
-         return redirect()->route('utilizadores.aluno.listar')
+         return redirect('/user_profile_aluno')
          ->with('success', 'Aluno deletado com sucesso.');
         }
 

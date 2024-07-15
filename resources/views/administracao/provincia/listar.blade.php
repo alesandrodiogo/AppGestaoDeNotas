@@ -63,16 +63,23 @@
             <tbody>
             @foreach ($provincias as $provincia)
               <tr>
+              <td>{{ $provincia->id }}</td>
               <td>{{ $provincia->nome }}</td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-info btn-sm" href="/provincias/edit/$provincia->id">
+                  <a class="btn btn-info btn-sm" href="/provincias/edit/{{$provincia->id}}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash"> </i>
-                  </a>
+                  <form action="/provincias/destroy/{{ $provincia->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash">
+                            </i>
+                            </button>
+                            </form>
                 </td>
               </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

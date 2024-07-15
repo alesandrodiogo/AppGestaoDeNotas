@@ -23,6 +23,15 @@
                 </button>
               </div>
             </div>
+            @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
             <form action="/user_profile_aluno/update/{{$aluno->id}}" method="POST">
             <!-- /.card-header -->
             @csrf
@@ -33,12 +42,12 @@
   
                   <div class="form-group">
                     <label for="nome">Nome</label>
-                          <input type="text" value="{{ $aluno->nome }}" class="form-control" name="nome" id="nome" placeholder="Nome completo">
+                          <input type="text" value="{{ $aluno->nome_completo }}" class="form-control" name="nome_completo" id="nome_completo" placeholder="Nome completo">
                   </div>
 
                   <div class="form-group">
-                    <label for="numero">Numero</label>
-                          <input type="text" value="{{ $aluno->numero }}" class="form-control" name="numero" id="numero" placeholder="Numero de estudante">
+                    <label for="numero_estudante">Numero</label>
+                          <input type="text" value="{{ $aluno->numero_estudante }}" class="form-control" name="numero_estudante" id="numero_estudante" placeholder="Numero de estudante">
                   </div>
 
                   <div class="form-group">
@@ -118,8 +127,8 @@
               </div>
               <!-- /.row -->
              </div>
-                 <div class="form-group col-md-12">
-                  <button type="button" class="btn btn-block bg-gradient-success btn-sm">Gravar</button>
+             <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
                 </div>
                 
               </div>

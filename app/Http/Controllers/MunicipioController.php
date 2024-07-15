@@ -25,35 +25,40 @@ class MunicipioController extends Controller
         ]);
 
         Municipio::create($request->all());
-        return redirect()->route('administracao.municipio.listar')
+        return redirect('/municipios')
         ->with('success', 'Município criado com sucesso.');
     }
 
-    public function show(Municipio $municipio)
+    /*public function show(Municipio $municipio)
     {
         return view('municipios.show', compact('municipio'));
-    }
+    }*/
 
-    public function edit(Municipio $municipio)
+    public function edit($id)
     {
+        $municipio = Municipio::findOrFail($id);
         return view('administracao.municipio.editar', compact('municipio'));
     }
 
-    public function update(Request $request, Municipio $municipio)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $municipio = Municipio::findOrFail($id);
         $municipio->update($request->all());
-        return redirect()->route('administracao.municipio.listar')
-        ->with('success', 'Município atualizado com sucesso.');
+
+        return redirect('/municipios')
+            ->with('success', 'Município atualizado com sucesso.');
     }
 
-    public function destroy(Municipio $municipio)
+    public function destroy($id)
     {
+        $municipio = Municipio::findOrFail($id);
         $municipio->delete();
-        return redirect()->route('administracao.municipio.listar')
-        ->with('success', 'Município excluído com sucesso.');
+
+        return redirect('/municipios')
+            ->with('success', 'Município excluído com sucesso.');
     }
 }

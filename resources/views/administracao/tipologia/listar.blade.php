@@ -62,7 +62,7 @@
               </tr>
             </thead>
             <tbody>
-              <!--<% tipologia.forEach(tipologia=>{ %>-->
+            @foreach ($tipologias as $tipologia)
               <tr>
                 <td>{{ $tipologia->id }}</td>
                 <td>{{ $tipologia->nome }}</td>
@@ -72,9 +72,14 @@
                   <a class="btn btn-info btn-sm" href="/tipologia/edit/{{ $tipologia->id }}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash"> </i>
-                  </a>
+                  <form action="/tipologia/destroy/{{ $tipologia->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash">
+                            </i>
+                            </button>
+                            </form>
                 </td>
               </tr>
               @endforeach

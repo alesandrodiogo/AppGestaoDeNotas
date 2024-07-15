@@ -42,12 +42,12 @@
         <div class="small-box bg-info">
           <div class="inner">
             <h3>53</h3>
-            <p>Funcionários</p>
+            <p>Cursos</p>
           </div>
           <div class="icon">
             <i class="fas fa-users"></i>
           </div>
-          <a href="/user_profile_encarregado" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="/cursos" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->

@@ -25,35 +25,40 @@ class CursoController extends Controller
         ]);
 
         Curso::create($request->all());
-        return redirect()->route('gestao.cursos.listar')
+        return redirect('/cursos')
         ->with('success', 'Curso criado com sucesso.');
     }
 
-    public function show(Curso $curso)
+    /*public function show(Curso $curso)
     {
         return view('cursos.show', compact('curso'));
-    }
+    }*/
 
-    public function edit(Curso $curso)
+    public function edit($id)
     {
+        $curso = Curso::findOrFail($id);
         return view('gestao.cursos.editar', compact('curso'));
     }
 
-    public function update(Request $request, Curso $curso)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $curso = Curso::findOrFail($id);
         $curso->update($request->all());
-        return redirect()->route('gestao.cursos.listar')
-        ->with('success', 'Curso atualizado com sucesso.');
+
+        return redirect('/cursos')
+            ->with('success', 'Curso atualizado com sucesso.');
     }
 
-    public function destroy(Curso $curso)
+    public function destroy($id)
     {
+        $curso = Curso::findOrFail($id);
         $curso->delete();
-        return redirect()->route('gestao.cursos.listar')
-        ->with('success', 'Curso excluído com sucesso.');
+
+        return redirect('/cursos')
+            ->with('success', 'Curso excluído com sucesso.');
     }
 }

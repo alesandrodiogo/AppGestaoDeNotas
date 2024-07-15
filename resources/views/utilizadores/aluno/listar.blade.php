@@ -51,8 +51,8 @@
               @foreach ($alunos as $aluno)
               <tr>
               <th>{{ $aluno->id }}</th>
-                <td>{{ $aluno->nome }}</td>
-                <td>{{ $aluno->numero }}</td>
+                <td>{{ $aluno->nome_completo }}</td>
+                <td>{{ $aluno->numero_estudante }}</td>
                 <td>{{ $aluno->nome_pai }}</td>
                 <td>{{ $aluno->nome_mae }}</td>
                 <td>{{ $aluno->telefone }}</td>
@@ -61,16 +61,22 @@
                 <th>{{ $aluno->data_nascimento }}</th>
                 <th>{{ $aluno->morada }}</th>
                 <td> 
-                  <a class="btn btn-info btn-sm" href="{{ $aluno->id }}">
+                  <a class="btn btn-info btn-sm" href="/user_profile_aluno/edit/{{ $aluno->id }}">
                   <i class="fas fa-pencil-alt"></i></a>
 
-                  <a class="btn btn-danger btn-sm" href="#">
-                  <i class="fas fa-trash"></i></a>
+                  <form action="/user_profile_aluno/destroy/{{$aluno->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash">
+                            </i>
+                            </button>
+                            </form>
                   <a class="btn btn-danger btn-sm" href="/user_profile_aluno/ver/{{ $aluno->id }}">
                     <i class="fas fa-eye"></i></a>
                 </td>
               </tr>
-              
+              @endforeach
               </tbody>
             </table>
           </div>

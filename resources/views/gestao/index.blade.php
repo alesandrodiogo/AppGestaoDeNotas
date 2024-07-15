@@ -152,19 +152,6 @@
 
        <div class="row">
         <!-- ./col -->
-        <div class="col-lg-6 col-6">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>53</h3>
-              <p>Turnos</p>
-            </div>
-            <div class="icon">
-               <i class="fa5 fa-building"></i>
-            </div>
-            <a href="/turnos" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
         <!-- ./col -->
 
         <div class="col-lg-6 col-6">
@@ -197,20 +184,6 @@
         </div>
 
         <!-- ./col -->
-        <div class="col-lg-6 col-6">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>Época</p>
-            </div>
-            <div class="icon">
-             <i class="fas fa-users"></i>
-            </div>
-            <a href="/epocas" class="small-box-footer">Saber mais <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
 
     </div><!--/. container-fluid -->
   </section>

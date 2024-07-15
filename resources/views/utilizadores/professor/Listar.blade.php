@@ -32,7 +32,11 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Lista de professores</h3>
-
+          @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            {{ $message }}
+        </div>
+          @endif
           <div class="card-tools">
             <button
               type="button"
@@ -60,7 +64,6 @@
                 <th style="width: 15%">Nome</th>
                 <th style="width: 15%">Email</th>
                 <th style="width: 15%">Telefone</th>
-                <th style="width: 15%" class="text-center">Estado</th>
                 <th style="width: 15%" class="text-center">Opções</th>
               </tr>
             </thead>
@@ -71,25 +74,18 @@
                 <td>{{ $professor->nome }}</td>
                 <td>{{ $professor->email }}</td>
                 <td>{{ $professor->telefone }}</td>
-                <td class="project-state">
-                  <div class="form-group">
-                    <input
-                      type="checkbox"
-                      name="my-checkbox"
-                      checked
-                      data-bootstrap-switch
-                      data-off-color="danger"
-                      data-on-color="success"
-                    />
-                  </div>
-                </td>
                 <td class="project-actions text-right">
                   <a class="btn btn-info btn-sm" href="/user_profile_prof/edit/{{ $professor->id }}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash"> </i>
-                  </a>
+                  <form action="/user_profile_prof/destroy/{{ $professor->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash">
+                            </i>
+                            </button>
+                            </form>
                 </td>
               </tr>
               @endforeach

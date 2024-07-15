@@ -25,35 +25,40 @@ class ProvinciaController extends Controller
         ]);
 
         Provincia::create($request->all());
-        return redirect()->route('administracao.provincia.listar')
+        return redirect('/provincias')
         ->with('success', 'Província criada com sucesso.');
     }
 
-    public function show(Provincia $provincia)
+    /*public function show(Provincia $provincia)
     {
         return view('provincias.show', compact('provincia'));
-    }
+    }*/
 
-    public function edit(Provincia $provincia)
+    public function edit($id)
     {
+        $provincia = Provincia::findOrFail($id);
         return view('administracao.provincia.editar', compact('provincia'));
     }
 
-    public function update(Request $request, Provincia $provincia)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $provincia = Provincia::findOrFail($id);
         $provincia->update($request->all());
-        return redirect()->route('administracao.provincia.listar')
-        ->with('success', 'Província atualizada com sucesso.');
+
+        return redirect('/provincias')
+            ->with('success', 'Provincia atualizada com sucesso.');
     }
 
-    public function destroy(Provincia $provincia)
+    public function destroy($id)
     {
+        $provincia = Provincia::findOrFail($id);
         $provincia->delete();
-        return redirect()->route('administracao.provincia.listar')
-        ->with('success', 'Província excluída com sucesso.');
+
+        return redirect('/provincias')
+            ->with('success', 'Provincia excluída com sucesso.');
     }
 }

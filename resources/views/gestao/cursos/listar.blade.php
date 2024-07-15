@@ -63,11 +63,6 @@
                     <td>
                     {{ $curso->nome }}  
                     </td>
-                    <td class="project-state">
-                       <div class="form-group">
-                      <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
-                     </div>
-                    </td>
                     <td class="project-actions text-right">
                         
                         <a class="btn btn-info btn-sm" href="/curso/edit/{{ $curso->id }}">
@@ -75,11 +70,14 @@
                             </i>
                             
                         </a>
-                        <a class="btn btn-danger btn-sm" href="#">
+                        <form action="/cursos/destroy/{{ $curso->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash">
                             </i>
-                           
-                        </a>
+                            </button>
+                            </form>
                     </td>
                 </tr>
                 @endforeach

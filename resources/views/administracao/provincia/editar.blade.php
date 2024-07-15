@@ -26,20 +26,22 @@
           </div>
           <form action="/provincias/update/{{$provincia->id}}" method="POST">
           <!-- /.card-header -->
+          @csrf
+          @method('PUT')
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                  <div class="form-group">
                   <label for="nome">Nome</label>
-                        <input type="text" name="nome" value="{{ $provincia->nome }} class="form-control" id="nome" placeholder="Descrição">
+                        <input type="text" name="nome" value="{{ $provincia->nome }}" class="form-control" id="nome" placeholder="Nome">
                 </div>
               </div>
              
                 <!-- /.form-group -->
               </div>
-               <div class="form-group">
-                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
+                </div>
               
             </div>
             <!-- /.row -->

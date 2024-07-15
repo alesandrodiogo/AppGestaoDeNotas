@@ -35,9 +35,9 @@
               </div>
               <!-- /.col -->          
            
-               <div class="form-group">
-                <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
+                </div>
               
             </div>
             <!-- /.row -->

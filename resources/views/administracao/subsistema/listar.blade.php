@@ -72,9 +72,14 @@
                   <a class="btn btn-info btn-sm" href="/subsistema/edit/{{ $subsistema->id }}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash"> </i>
-                  </a>
+                  <form action="/subsistema/destroy/{{ $subsistema->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash">
+                            </i>
+                            </button>
+                            </form>
                 </td>
               </tr>
               @endforeach

@@ -24,17 +24,18 @@
           </div>
           <!-- /.card-header -->
           <form action="/tipologia/store" method="POST">
+          @csrf
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="nome">Nome</label>
-                          <input type="text" name="nome" class="form-control" id="nome" placeholder="Descrição">
+                          <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
                   </div>
                 </div>
                 <!-- /.col -->          
              
-                 <div class="form-group">
+                <div class="form-group">
                   <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
                 </div>
                 

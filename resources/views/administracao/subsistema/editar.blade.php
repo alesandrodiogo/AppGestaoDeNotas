@@ -32,14 +32,13 @@
                     <div class="form-group">
                       <label for="nome">Nome</label>
                             <input type="text" name="nome" value="{{ $subsistema->nome }}" class="form-control" id="nome" placeholder="Nome">
-                             <input type="hidden" name="id" value="{{ $subsistema->id }}">
                     </div>
                   </div>
                   <!-- /.col -->          
                
-                   <div class="form-group">
-                    <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
-                  </div>
+                  <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
+                </div>
                   
                 </div>
                 <!-- /.row -->

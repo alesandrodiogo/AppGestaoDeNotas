@@ -27,37 +27,42 @@ class ProfessorController extends Controller
         ]);
 
         Professor::create($request->all());
-        return redirect()->route('utilizadores.professor.listar')
+        return redirect('/user_profile_prof')
         ->with('success', 'Professor criado com sucesso.');
     }
 
-    public function show(Professor $professor)
+    /*public function show(Professor $professor)
     {
         return view('professores.show', compact('professor'));
-    }
+    }*/
 
-    public function edit(Professor $professor)
+    public function edit($id)
     {
+        $professor = Professor::findOrFail($id);
         return view('utilizadores.professor.editar', compact('professor'));
     }
 
-    public function update(Request $request, Professor $professor)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'telefone' => 'nullable|string|max:15',
+            'email' => 'required|email|unique:professors,email,'.$id,
+            'telefone' => 'required|string|max:15',
         ]);
 
+        $professor = Professor::findOrFail($id);
         $professor->update($request->all());
-        return redirect()->route('utilizadores.professor.listar')
-        ->with('success', 'Professor atualizado com sucesso.');
+
+        return redirect('/user_profile_prof')
+            ->with('success', 'Professor atualizado com sucesso.');
     }
 
-    public function destroy(Professor $professor)
+    public function destroy($id)
     {
+        $professor = Professor::findOrFail($id);
         $professor->delete();
-        return redirect()->route('utilizadores.professor.listar')
-        ->with('success', 'Professor excluído com sucesso.');
+
+        return redirect('/user_profile_prof')
+            ->with('success', 'Professor excluído com sucesso.');
     }
 }

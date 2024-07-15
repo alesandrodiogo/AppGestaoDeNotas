@@ -24,7 +24,7 @@
              
             </div>
           </div>
-          <form action="/nivel_academico/update/{{$nivelAcademico->id)}}" method="POST">
+          <form action="/nivel_academico/update/{{$nivelAcademico->id}}" method="POST">
             @csrf
             @method('PUT')
           <!-- /.card-header -->
@@ -37,9 +37,9 @@
                 </div>
               </div>
               <!-- /.col -->
-               <div class="form-group">
-                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
+                </div>
             </div>
             <!-- /.row -->
            </div>

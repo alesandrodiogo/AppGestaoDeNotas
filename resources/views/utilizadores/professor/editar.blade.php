@@ -23,7 +23,16 @@
              
             </div>
           </div>
-          <form action="/user_profile_prof/update/{{$professor->id)}}" method="POST">
+          @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+          <form action="/user_profile_prof/update/{{$professor->id}}" method="POST">
             @csrf
             @method('PUT')
           <!-- /.card-header -->
@@ -32,7 +41,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="nome">Nome</label>
-                        <input type="text" value="{{ $professor->nome }} class="form-control" name="nome" id="nome" placeholder="Nome">
+                        <input type="text" value="{{ $professor->nome }}" class="form-control" name="nome" id="nome" placeholder="Nome">
                 </div>
                  <div class="form-group">
                   <label for="email">Email</label>
@@ -48,9 +57,9 @@
                
                 <!-- /.form-group -->
               </div>
-               <div class="form-group">
-                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
+                </div>
               
             </div>
             <!-- /.row -->

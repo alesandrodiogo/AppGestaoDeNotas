@@ -27,20 +27,21 @@
           </div>
           <form action="/provincias/store" method="POST">
           <!-- /.card-header -->
+          @csrf
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                  <div class="form-group">
                   <label for="nome">Nome</label>
-                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Descrição">
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" required>
                 </div>
               </div>
               <!-- /.col -->
              <!-- /.form-group -->
               </div>
-               <div class="form-group">
-                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
+                </div>
               
             </div>
             <!-- /.row -->

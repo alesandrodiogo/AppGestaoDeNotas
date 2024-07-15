@@ -13,6 +13,7 @@ class EscolaController extends Controller
 {
     public function index()
     {
+        // $escolas = Escola::all(); ou a funcao de baixo
         $escolas = Escola::with(['subsistema', 'tipologia', 'municipio', 'provincia'])->get();
         return view('administracao.escola.listar', compact('escolas'));
     }
@@ -39,16 +40,16 @@ class EscolaController extends Controller
 
         Escola::create($request->all());
 
-        return redirect()->route('administracao.escola.listar')
+        return redirect('/escolas')
             ->with('success', 'Escola criada com sucesso.');
     }
 
-    public function show($id)
+    /*public function show($id)
     {
         $escola = Escola::with(['subsistema', 'tipologia', 'municipio', 'provincia'])
         ->findOrFail($id);
         return view('escolas.show', compact('escola'));
-    }
+    }*/
 
     public function edit($id)
     {
@@ -65,6 +66,7 @@ class EscolaController extends Controller
         $request->validate([
             'nome' => 'required',
             'director' => 'required',
+            'nif' => 'required',
             'subsistema_id' => 'required|exists:subsistemas,id',
             'tipologia_id' => 'required|exists:tipologias,id',
             'municipio_id' => 'required|exists:municipios,id',
@@ -74,7 +76,7 @@ class EscolaController extends Controller
         $escola = Escola::findOrFail($id);
         $escola->update($request->all());
 
-        return redirect()->route('administracao.escola.listar')
+        return redirect('/escolas')
             ->with('success', 'Escola atualizada com sucesso.');
     }
 
@@ -83,7 +85,7 @@ class EscolaController extends Controller
         $escola = Escola::findOrFail($id);
         $escola->delete();
 
-        return redirect()->route('administracao.escola.listar')
+        return redirect('/escolas')
             ->with('success', 'Escola excluída com sucesso.');
     }
 }

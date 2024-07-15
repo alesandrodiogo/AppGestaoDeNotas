@@ -31,14 +31,14 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="nome">Nome</label>
-                        <input type="text" name="nom" class="form-control" id="nome" placeholder="Nome do curso">
+                        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do curso">
                 </div>
               </div>
               <!-- /.col -->
               
-               <div class="form-group">
-                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
+                </div>
               
             </div>
             <!-- /.row -->

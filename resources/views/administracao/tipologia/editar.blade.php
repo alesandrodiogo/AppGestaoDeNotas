@@ -31,13 +31,12 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="nome">Nome</label>
-                          <input type="text" name="nome" value="{{ $tipologia->nome }}" class="form-control" id="nome" placeholder="Descrição">
-                          <input type="hidden" name="id" value="{{$tipologia->id}}">
+                          <input type="text" name="nome" value="{{ $tipologia->nome }}" class="form-control" id="nome" placeholder="Nome">
                   </div>
                 </div>
                 <!-- /.col -->          
              
-                 <div class="form-group">
+                <div class="form-group">
                   <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
                 </div>
                 

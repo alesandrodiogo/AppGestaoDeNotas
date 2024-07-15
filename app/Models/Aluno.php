@@ -23,7 +23,7 @@ class Aluno extends Model
         'morada',
     ];
 
-    protected $dates = ['data_nascimento'];
+    protected $dates = ['data_nascimento']; 
 
     public function turma() : BelongsTo
     {

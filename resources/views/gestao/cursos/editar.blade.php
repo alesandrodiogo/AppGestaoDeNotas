@@ -24,7 +24,7 @@
              
             </div>
           </div>
-          <form action="/curso/edit/{{$curso->id}}" method="POST">
+          <form action="/curso/update/{{$curso->id}}" method="POST">
             @csrf
             @method('PUT')
           <!-- /.card-header -->
@@ -38,9 +38,9 @@
               </div>
               <!-- /.col -->
               
-               <div class="form-group">
-                <button type="button" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
+                </div>
               
             </div>
             <!-- /.row -->

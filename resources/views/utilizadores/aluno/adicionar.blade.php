@@ -31,33 +31,41 @@
                 <div class="col-md-12">
   
                   <div class="form-group">
-                    <label for="exampleInputName1">Nome</label>
-                          <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome completo">
+                    <label for="nome_completo">Nome</label>
+                          <input type="text" class="form-control" name="nome_completo" id="nome_completo" placeholder="Nome completo">
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputName1">Numero</label>
-                          <input type="text" class="form-control" name="numero" id="numero" placeholder="Numero de estudante">
+                    <label for="numero_estudante">Numero</label>
+                          <input type="text" class="form-control" name="numero_estudante" id="numero_estudante" placeholder="Numero de estudante">
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputName1">Turma</label>
-                          <input type="text" class="form-control" name="turma_id" id="turma_id" placeholder="Turma">
-                  </div>
+            <label for="turma_id">Turma</label>
+            <select name="turma_id" id="turma_id" class="form-control" required>
+                @foreach ($turmas as $turma)
+                    <option value="{{ $turma->id }}">{{ $turma->nome }}</option>
+                @endforeach
+            </select>
+        </div>
 
-                  <div class="form-group">
-                    <label for="exampleInputName1">Sala</label>
-                          <input type="text" class="form-control" name="sala_id" id="sala_id" placeholder="Numero da sala">
-                  </div>
+        <div class="form-group">
+            <label for="sala_id">Sala</label>
+            <select name="sala_id" id="sala_id" class="form-control" required>
+                @foreach ($salas as $sala)
+                    <option value="{{ $sala->id }}">{{ $sala->nome }}</option>
+                @endforeach
+            </select>
+        </div>
 
                   <!-- /.form-group -->
                   <div class="form-group">
-                    <label for="exampleInputName1">Telefone </label>
+                    <label for="telefone">Telefone </label>
                     <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone">
                   </div>  
 
                   <div class="form-group">
-                    <label for="exampleInputName1">Morada </label>
+                    <label for="morada">Morada </label>
                     <input type="text" class="form-control" name="morada" id="morada" placeholder="Rua 21 bairro azul">
                   </div>  
                 <!-- /.col -->
@@ -70,7 +78,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                       </div>
-                      <input type="date" class="form-control" name="data_nascimento" id="data_nascimento" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                      <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
                     </div>
                   </div>
                 </div>
@@ -92,7 +100,7 @@
               <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                    <label for="exampleInputName1">Nome Pai</label>
+                    <label for="nome_pai">Nome Pai</label>
                         <input type="text" class="form-control" name="nome_pai" id="nome_pai" placeholder="Nome completo do pai">
                     </div>
                     </div>
@@ -102,15 +110,15 @@
                 <div class="col-md-12">
                   
                   <div class="form-group">
-                    <label for="exampleInputName1">Nome Mãe</label>
+                    <label for="nome_mae">Nome Mãe</label>
                     <input type="text" class="form-control" name="nome_mae" id="nome_mae" placeholder="Nome completo da mãe">
                   </div>
                 </div>
               </div>
               <!-- /.row -->
              </div>
-                 <div class="form-group col-md-12">
-                  <button type="button" class="btn btn-block bg-gradient-success btn-sm">Gravar</button>
+             <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
                 </div>
                 
               </div>

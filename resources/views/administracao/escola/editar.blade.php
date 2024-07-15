@@ -39,6 +39,22 @@
                   <label for="director">Director</label>
                         <input type="text" value="{{ $escola->director }}" name="director" class="form-control" id="director" placeholder="Nome completo">
                 </div>
+                <div class="form-group">
+                <label for="municipio_id">Município</label>
+                <select name="municipio_id" id="municipio_id" class="form-control" required>
+                    @foreach ($municipios as $municipio)
+                        <option value="{{ $municipio->id }}" {{ $escola->municipio_id == $municipio->id ? 'selected' : '' }}>{{ $municipio->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="provincia_id">Província</label>
+                <select name="provincia_id" id="provincia_id" class="form-control" required>
+                    @foreach ($provincias as $provincia)
+                        <option value="{{ $provincia->id }}" {{ $escola->provincia_id == $provincia->id ? 'selected' : '' }}>{{ $provincia->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
               </div>
               <!-- /.col -->
               <div class="col-md-6">
@@ -66,24 +82,6 @@
                 <!-- /.form-group -->
               </div>
              
-             <div class="col-md-6">
-             <div class="form-group">
-                <label for="municipio_id">Município</label>
-                <select name="municipio_id" id="municipio_id" class="form-control" required>
-                    @foreach ($municipios as $municipio)
-                        <option value="{{ $municipio->id }}" {{ $escola->municipio_id == $municipio->id ? 'selected' : '' }}>{{ $municipio->nome }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="provincia_id">Província</label>
-                <select name="provincia_id" id="provincia_id" class="form-control" required>
-                    @foreach ($provincias as $provincia)
-                        <option value="{{ $provincia->id }}" {{ $escola->provincia_id == $provincia->id ? 'selected' : '' }}>{{ $provincia->nome }}</option>
-                    @endforeach
-                </select>
-            </div>
-              </div>
                <div class="form-group">
                 <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
               </div>

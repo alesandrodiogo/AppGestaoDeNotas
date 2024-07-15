@@ -25,35 +25,40 @@ class TipologiaController extends Controller
         ]);
 
         Tipologia::create($request->all());
-        return redirect()->route('administracao.tipologia.listar')
+        return redirect('/tipologia')
         ->with('success', 'Tipologia criada com sucesso.');
     }
 
-    public function show(Tipologia $tipologia)
+    /*public function show(Tipologia $tipologia)
     {
         return view('tipologias.show', compact('tipologia'));
-    }
+    }*/
 
-    public function edit(Tipologia $tipologia)
+    public function edit($id)
     {
+        $tipologia = Tipologia::findOrFail($id);
         return view('administracao.tipologia.editar', compact('tipologia'));
     }
 
-    public function update(Request $request, Tipologia $tipologia)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $tipologia = Tipologia::findOrFail($id);
         $tipologia->update($request->all());
-        return redirect()->route('administracao.tipologia.listar')
-        ->with('success', 'Tipologia atualizada com sucesso.');
+
+        return redirect('/tipologia')
+            ->with('success', 'Tipologia atualizada com sucesso.');
     }
 
-    public function destroy(Tipologia $tipologia)
+    public function destroy($id)
     {
+        $tipologia = Tipologia::findOrFail($id);
         $tipologia->delete();
-        return redirect()->route('administracao.tipologia.listar')
-        ->with('success', 'Tipologia excluída com sucesso.');
+
+        return redirect('/tipologia')
+            ->with('success', 'Tipologia excluída com sucesso.');
     }
 }

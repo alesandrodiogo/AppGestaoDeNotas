@@ -25,35 +25,40 @@ class SubsistemaController extends Controller
         ]);
 
         Subsistema::create($request->all());
-        return redirect()->route('administracao.subsistema.listar')
+        return redirect('/subsistemas')
         ->with('success', 'Subsistema criado com sucesso.');
     }
 
-    public function show(Subsistema $subsistema)
+    /*public function show(Subsistema $subsistema)
     {
         return view('subsistemas.show', compact('subsistema'));
-    }
+    }*/
 
-    public function edit(Subsistema $subsistema)
+    public function edit($id)
     {
+        $subsistema = Subsistema::findOrFail($id);
         return view('administracao.subsistema.editar', compact('subsistema'));
     }
 
-    public function update(Request $request, Subsistema $subsistema)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string|max:255',
         ]);
 
+        $subsistema = Subsistema::findOrFail($id);
         $subsistema->update($request->all());
-        return redirect()->route('administracao.subsistema.listar')
-        ->with('success', 'Subsistema atualizado com sucesso.');
+
+        return redirect('/subsistemas')
+            ->with('success', 'Subsistema atualizado com sucesso.');
     }
 
-    public function destroy(Subsistema $subsistema)
+    public function destroy($id)
     {
+        $subsistema = Subsistema::findOrFail($id);
         $subsistema->delete();
-        return redirect()->route('administracao.subsistema.listar')
-        ->with('success', 'Subsistema excluído com sucesso.');
+
+        return redirect('/subsistemas')
+            ->with('success', 'Subsistema excluído com sucesso.');
     }
 }

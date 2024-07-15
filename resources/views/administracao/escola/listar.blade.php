@@ -69,20 +69,27 @@
             <tbody>
             @foreach ($escolas as $escola)
               <tr>
+              <td>{{ $escola->id }}</td>
                 <td>{{ $escola->nome }}</td>
                 <td>{{ $escola->director }}</td>
+                <td>{{ $escola->nif }}</td>
                 <td>{{ $escola->subsistema->nome }}</td>
                 <td>{{ $escola->tipologia->nome }}</td>
                 <td >{{ $escola->municipio->nome }}</td>
                 <td >{{ $escola->provincia->nome }}</td>
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-info btn-sm" href="/escola/edit">
+                  <a class="btn btn-info btn-sm" href="/escola/edit/{{ $escola->id }}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash"> </i>
-                  </a>
+                  <form action="/escola/destroy/{{ $escola->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash">
+                            </i>
+                            </button>
+                            </form>
                 </td>
               </tr>
               @endforeach
