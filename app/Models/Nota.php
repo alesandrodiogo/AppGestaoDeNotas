@@ -31,7 +31,7 @@ class Nota extends Model
 
     public function anoLectivo() : BelongsTo
     {
-        return $this->belongsTo(AnoLectivo::class);
+        return $this->belongsTo(AnoLectivo::class, 'anolectivo_id');
     }
 
     public function disciplina() : BelongsTo

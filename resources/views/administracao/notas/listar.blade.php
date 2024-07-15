@@ -31,7 +31,11 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Lista de notas</h3>
-
+          @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        {{ $message }}
+                    </div>
+                @endif
           <div class="card-tools">
             <button
               type="button"
@@ -74,8 +78,8 @@
             @foreach ($notas as $nota)
               <tr>
                 <td>{{ $nota->id }}</td>
-                <td>{{ $nota->aluno->nome }}</td>
-                <td>{{ $nota->anoLectivo->nome }}</td>
+                <td>{{ $nota->aluno->nome_completo }}</td>
+                <td>{{ $nota->anoLectivo->nome ?? 'N/A' }}</td>
                 <td>{{ $nota->disciplina->nome }}</td>
                 <td>{{ $nota->mt1 }}</td>
                 <td >{{ $nota->mt2 }}</td>
@@ -90,9 +94,14 @@
                   <a class="btn btn-info btn-sm" href="/nota/edit/{{ $nota->id }}">
                     <i class="fas fa-pencil-alt"> </i>
                   </a>
-                  <a class="btn btn-danger btn-sm" href="/admin/escola/del/<%=escolas.id %>">
-                    <i class="fas fa-trash"> </i>
-                  </a>
+                  <form action="/nota/destroy/{{ $nota->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash">
+                            </i>
+                            </button>
+                            </form>
                 </td>
               </tr>
               @endforeach

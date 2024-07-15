@@ -53,7 +53,7 @@ class NotaController extends Controller
         $nota->npt = $request->npt;
         $nota->save(); // A coluna mfd e mt será atualizada automaticamente
 
-        return redirect()->route('administracao.notas.listar')
+        return redirect('/notas')
         ->with('success', 'Nota criada com sucesso.');
     }
 
@@ -64,7 +64,7 @@ class NotaController extends Controller
         $anosLectivos = AnoLectivo::all();
         $disciplinas = Disciplina::all();
 
-        return view('notas.edit', compact('nota', 'alunos', 'anosLectivos', 'disciplinas'));
+        return view('administracao.notas.editar', compact('nota', 'alunos', 'anosLectivos', 'disciplinas'));
     }
 
     public function update(Request $request, $id)
@@ -82,19 +82,19 @@ class NotaController extends Controller
         ]);
 
         $nota = Nota::findOrFail($id);
-        $nota->aluno_id = $request->aluno_id;
-        $nota->anolectivo_id = $request->anolectivo_id;
-        $nota->disciplina_id = $request->disciplina_id;
-        $nota->mt1 = $request->mt1;
-        $nota->mt2 = $request->mt2;
-        $nota->mt3 = $request->mt3;
-        $nota->mac = $request->mac;
-        $nota->npp = $request->npp;
-        $nota->npt = $request->npt;
-        $nota->save(); // A coluna mfd e mt será atualizada automaticamente
+        $nota->update($request->all());
 
-        return redirect()->route('administracao.notas.listar')
+        return redirect('/notas')
         ->with('success', 'Nota atualizada com sucesso.');
+    }
+
+    public function destroy($id)
+    {
+        $nota = Nota::findOrFail($id);
+        $nota->delete();
+
+        return redirect('/notas')
+            ->with('success', 'Nota excluída com sucesso.');
     }
  
 }    

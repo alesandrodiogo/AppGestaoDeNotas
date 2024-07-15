@@ -49,10 +49,6 @@
                     <th style="width: 15%">
                        Nome
                     </th>
-                   
-                    <th style="width:15%" class="text-center">
-                        Estado
-                    </th>
                     <th style="width: 15%" class="text-center">
                       Opções
                     </th>
@@ -66,11 +62,6 @@
                     </td>
                     <td> 
                     {{ $classe->nome }}                     
-                    </td>
-                    <td class="project-state">
-                       <div class="form-group">
-                      <input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
-                     </div>
                     </td>
                     <td class="project-actions text-right">
                         

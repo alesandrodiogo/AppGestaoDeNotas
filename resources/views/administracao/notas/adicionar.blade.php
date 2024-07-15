@@ -31,51 +31,51 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputName1">Aluno</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
-                  <select class="form-control select2" name="aluno_id" style="width: 100%;">
+                  <label for="aluno_id">Aluno</label>
+                  <select class="form-control select2" name="aluno_id" id="aluno_id" style="width: 100%;">
                   @foreach ($alunos as $aluno)
-                    <option selected="selected" value="{{ $aluno->id }}">{{ $aluno->nome }}</option>
+                    <option selected="selected" value="{{ $aluno->id }}">{{ $aluno->nome_completo }}</option>
                     @endforeach
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputName1">Ano lectivo</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
-                  <select class="form-control select2" name="anolectivo_id" style="width: 100%;">
+                  <label for="anolectivo_id">Ano lectivo</label>
+                  <select class="form-control select2" name="anolectivo_id" id="anolectivo_id" style="width: 100%;">
                   @foreach ($anosLectivos as $anoLectivo)
                     <option selected="selected" value="{{ $anoLectivo->id }}">{{ $anoLectivo->nome }}</option>
                     @endforeach
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputName1">Disciplina</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
-                  <select class="form-control select2" name="disciplina_id" style="width: 100%;">
+                  <label for="disciplina_id">Disciplina</label>
+                  <select class="form-control select2" name="disciplina_id" id="disciplina_id" style="width: 100%;">
                   @foreach ($disciplinas as $disciplina)
                     <option selected="selected" value="{{ $disciplina->id }}">{{ $disciplina->nome }}</option>
                     @endforeach
                   </select>
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputName1">MT1</label>
+                  <label for="mt1">MT1</label>
                         <input type="number" name="mt1" class="form-control" id="mt1" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">MT2</label>
+                 <label for="mt2">MT2</label>
                         <input type="number" name="mt2" class="form-control" id="mt2" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">MT3</label>
+                 <label for="mt3">MT3</label>
                         <input type="number" name="mt3" class="form-control" id="mt3" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">MAC</label>
+                 <label for="mac">MAC</label>
                         <input type="number" name="mac" class="form-control" id="mac" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">NPP</label>
+                 <label for="npp">NPP</label>
                         <input type="number" name="npp" class="form-control" id="npp" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">NPT</label>
+                 <label for="npt">NPT</label>
                         <input type="number" name="npt" class="form-control" id="npt" placeholder="">
                 </div>
               </div>
@@ -83,18 +83,18 @@
               <div class="col-md-6">
                 
               <div class="form-group">
-                 <label for="exampleInputName1">MFD</label>
+                 <label for="mfd">MFD</label>
                         <input type="number" disabled name="mfd" class="form-control" id="mfd" placeholder="">
                 </div>
                 <div class="form-group">
-                 <label for="exampleInputName1">MT</label>
+                 <label for="mt">MT</label>
                         <input type="number" disabled name="mt" class="form-control" id="mt" placeholder="">
                 </div>
               </div>
              
-               <div class="form-group">
-                <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
+                </div>
               
             </div>
             <!-- /.row -->

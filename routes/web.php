@@ -16,7 +16,6 @@ use App\Http\Controllers\SalaController;
 use App\Http\Controllers\SubsistemaController;
 use App\Http\Controllers\TipologiaController;
 use App\Http\Controllers\TurmaController;
-use App\Models\Nota;
 
 Route::get('/', function () {
     return view('welcome');
@@ -165,7 +164,8 @@ Route::get('/notas', [NotaController::class, 'index']);
 Route::get('/nota/add', [NotaController::class, 'create']);
 Route::post('/notas/store', [NotaController::class, 'store']);
 Route::get('/nota/edit/{id}', [NotaController::class, 'edit']);
-Route::put('/nota/update/{id}', [AlunoController::class, 'update']);
+Route::put('/nota/update/{id}', [NotaController::class, 'update']);
+Route::delete('/nota/destroy/{id}', [NotaController::class, 'destroy']);
 
 Route::get('/suporte', function(){
     return view('suporte.index');

@@ -33,15 +33,15 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="aluno_id">Aluno</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
-                  <select class="form-control select2" name="aluno_id" style="width: 100%;">
+                  <select class="form-control select2" name="aluno_id" id="aluno_id" style="width: 100%;">
                   @foreach ($alunos as $aluno)
-                  <option value="{{ $aluno->id }}" {{ $nota->aluno_id == $aluno->id ? 'selected' : '' }}>{{ $aluno->nome }}</option>
+                  <option value="{{ $aluno->id }}" {{ $nota->aluno_id == $aluno->id ? 'selected' : '' }}>{{ $aluno->nome_completo }}</option>
                   @endforeach
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="anolectivo_id">Ano lectivo</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
-                  <select class="form-control select2" name="anolectivo_id" style="width: 100%;">
+                  <select class="form-control select2" name="anolectivo_id" id="anolectivo_id" style="width: 100%;">
                   @foreach ($anosLectivos as $anoLectivo)
                   <option value="{{ $anoLectivo->id }}" {{ $nota->ano_lectivo_id == $anoLectivo->id ? 'selected' : '' }}>{{ $anoLectivo->nome }}</option>
                   @endforeach
@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-group">
                   <label for="disciplina_id">Disciplina</label><!-- Os responsaveis seram listados em base ao estatuto de DG-->
-                  <select class="form-control select2" name="disciplina_id" style="width: 100%;">
+                  <select class="form-control select2" name="disciplina_id" id="disciplina_id" style="width: 100%;">
                   @foreach ($disciplinas as $disciplina)
                   <option value="{{ $disciplina->id }}" {{ $nota->disciplina_id == $disciplina->id ? 'selected' : '' }}>{{ $disciplina->nome }}</option>
                   @endforeach
@@ -93,9 +93,9 @@
                 </div>
               </div>
              
-               <div class="form-group">
-                <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Adicionar</button>
-              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Actualizar</button>
+                </div>
               
             </div>
             <!-- /.row -->
