@@ -18,23 +18,9 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
+        <p class="nav-link">Bem-vindo, {{ Auth::user()->name }}!</p>
         <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Buscar Por Franquia" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+          
         </div>
       </li>
 
@@ -56,23 +42,30 @@
           
         </a>
         <div class="dropdown-menu dropdown-menu dropdown-menu-right">
-         
+         @guest 
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="nav-icon fas fa-id-card"></i> Perfil
+          <a href="/register" class="dropdown-item">
+            <i class="nav-icon fas fa-id-card"></i> Register
            
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="nav-icon fas fa-user-cog"></i> Denifições
+          <a href="/login" class="dropdown-item">
+            <i class="nav-icon fas fa-sign-in-alt"></i> Entrar
             
           </a>
+          @endguest
+          @auth
           <div class="dropdown-divider"></div>
-          <a href="index.html" class="dropdown-item">
-           <i class="nav-icon fas fa-sign-out-alt"></i> Saír
-            
-          </a>
-          
+          <form action="/logout" method="POST">
+                  @csrf
+                  <a href="/logout" 
+                    class="nav-link" 
+                    onclick="event.preventDefault();
+                    this.closest('form').submit();">
+                    Sair
+                  </a>
+                </form>
+                @endauth
         </div>
       </li>
 
@@ -105,7 +98,25 @@
             
           </li>
 
+          @if(Auth::user()->usertype == 'user')
+          <li class="nav-item">
+            <a href="{{ route('profile.show') }}" class="nav-link">
+              <i class="nav-icon fas fa-school"></i>
+              <p>Perfil
+              </p>
+            </a>
+          </li>
 
+          <li class="nav-item">
+            <a href="/notas" class="nav-link">
+              <i class="nav-icon fas fa-school"></i>
+              <p>Pauta Geral
+              </p>
+            </a>
+          </li>
+          @endif
+
+          @if(Auth::user()->usertype == 'admin')
           <li class="nav-item">
             <a href="/gestao" class="nav-link">
               <i class="nav-icon fas fa-school"></i>
@@ -130,6 +141,14 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{ route('profile.show') }}" class="nav-link">
+              <i class="nav-icon fas fa-school"></i>
+              <p>Perfil
+              </p>
+            </a>
+          </li>
+          @endif
           <li class="nav-item">
             <a href="/suporte" class="nav-link">
               <i class="nav-icon fas fa-wrench"></i>

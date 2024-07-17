@@ -13,11 +13,13 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
+            @if(Auth::user()->usertype == 'admin')
               <li class="breadcrumb-item">
                 <button type="submit" class="btn btn-primary btn-block">
                   <a href="/nota/add">Novo</a>
                 </button>
               </li>
+              @endif
             </ol>
           </div>
         </div>
@@ -71,7 +73,9 @@
                 <th style="width: 15%">NPP</th>
                 <th style="width: 15%">NPT</th>
                 <th style="width: 15%">MT</th>
+                @if(Auth::user()->usertype == 'admin')
                 <th style="width: 15%" class="text-center">Opções</th>
+                @endif
               </tr>
             </thead>
             <tbody>
@@ -90,6 +94,7 @@
                 <td >{{ $nota->npt }}</td>
                 <td >{{ $nota->mt }}</td>
                 </td>
+                @if(Auth::user()->usertype == 'admin')
                 <td class="project-actions text-right">
                   <a class="btn btn-info btn-sm" href="/nota/edit/{{ $nota->id }}">
                     <i class="fas fa-pencil-alt"> </i>
@@ -103,6 +108,7 @@
                             </button>
                             </form>
                 </td>
+                @endif
               </tr>
               @endforeach
             </tbody>

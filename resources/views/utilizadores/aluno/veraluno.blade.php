@@ -12,12 +12,6 @@
           <div class="col-sm-6">
             <h1>Ficha</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Ficha</li>
-            </ol>
-          </div>
         </div>
       </div>
       <!-- /.container-fluid -->
@@ -39,25 +33,23 @@
                   />
                 </div>
 
-                <h3 class="profile-username text-center">Jesus Afonso</h3>
+                <h3 class="profile-username text-center">{{ $aluno->nome_completo }}</h3>
 
-                <p class="text-muted text-center">Informática</p>
+                <p class="text-muted text-center">{{ $aluno->numero_estudante }}</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Turma</b> <a class="float-right">I12AT</a>
+                    <b>Turma</b> <a class="float-right">{{ $aluno->turma->nome }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Sala</b> <a class="float-right">A5</a>
+                    <b>Sala</b> <a class="float-right">{{ $aluno->sala->nome }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Classe</b> <a class="float-right">11</a>
+                    <b>Data Nascimento</b> <a class="float-right">{{ $aluno->data_nascimento }}</a>
                   </li>
                 </ul>
 
-                <a href="#" class="btn btn-primary btn-block"
-                  ><b>Altera Foto</b></a
-                >
+                
               </div>
               <!-- /.card-body -->
             </div>
@@ -70,11 +62,26 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i> Educação</strong>
+                <strong><i class="fas fa-book mr-1"></i> Nome do pai</strong>
 
                 <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at
-                  Knoxville
+                {{ $aluno->nome_pai }}
+                </p>
+
+                <hr />
+
+                <strong><i class="fas fa-book mr-1"></i> Nome da mãe</strong>
+
+                <p class="text-muted">
+                {{ $aluno->nome_mae }}
+                </p>
+
+                <hr />
+
+                <strong><i class="fas fa-book mr-1"></i> Telefone</strong>
+
+                <p class="text-muted">
+                {{ $aluno->telefone }}
                 </p>
 
                 <hr />
@@ -84,32 +91,9 @@
                   Localização</strong
                 >
 
-                <p class="text-muted">Luanda, Angola</p>
+                <p class="text-muted">{{ $aluno->morada }}</p>
 
                 <hr />
-
-                <strong
-                  ><i class="fas fa-pencil-alt mr-1"></i> Disciplina</strong
-                >
-
-                <p class="text-muted">
-                  <span class="tag tag-danger">LP</span> |
-                  <span class="tag tag-success">E.V.P</span> |
-                  <span class="tag tag-info">E.M.C</span> |
-                  <span class="tag tag-warning">E.L</span> |
-                  <span class="tag tag-primary">E.M</span>
-                </p>
-
-                <hr />
-
-                <strong
-                  ><i class="far fa-file-alt mr-1"></i> Notificação</strong
-                >
-
-                <p class="text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  fermentum enim neque.
-                </p>
               </div>
               <!-- /.card-body -->
             </div>
@@ -121,128 +105,19 @@
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
                   <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      href="#activity"
-                      data-toggle="tab"
-                      >Aluno</a
-                    >
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="#timeline" data-toggle="tab"
                       >Notas</a
                     >
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#settings" data-toggle="tab"
-                      >Saúde</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#timeline" data-toggle="tab"
-                      >Responsavel</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#settings" data-toggle="tab"
-                      >Historico</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#timeline" data-toggle="tab"
-                      >Financeiro</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#settings" data-toggle="tab"
-                      >Documentos</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#timeline" data-toggle="tab"
-                      >Trabalhos</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#settings" data-toggle="tab"
-                      >Ocorrências</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#timeline" data-toggle="tab"
-                      >Anexos</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#settings" data-toggle="tab"
-                      >Aulas</a
-                    >
-                  </li>
+                  
+                  
                 </ul>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
-                  <div class="active tab-pane" id="activity">
-                    <!-- Post -->
-                    <div class="post">
-                      <span class="username">
-                        <h3>Filiação</h3>
-                      </span>
-                      <p>
-                        <span>Pai: Jesus Afonso</span><br />
-                        <span>Mãe: Maria Angelina</span>
-                      </p>
-                    </div>
-                    <!-- /.post -->
-
-                    <!-- Post -->
-                    <div class="post clearfix">
-                      <span class="username">
-                        <h3>Contactos</h3>
-                      </span>
-                      <p>
-                        <span>Telefone: 99999999999</span><br />
-                        <span>Tel. Mãe: 99999999999</span><br />
-                        <span>Tel. Pai: 99999999999</span><br />
-                        <span>Tel. Outro: 99999999999</span>
-                      </p>
-                    </div>
-                    <!-- /.post -->
-
-                    <!-- Post -->
-                    <div class="post clearfix">
-                      <span class="username">
-                        <h3>Documento de Identificação</h3>
-                      </span>
-                      <p>
-                        <span>B.I: 99999999999</span> |
-                        <span>Data de Emissão: 99999999999</span><br />
-
-                        <span>Outro: 99999999999</span> |
-                        <span>Data de Emissão: 99999999999</span>
-                      </p>
-                    </div>
-                    <!-- /.post -->
-
-                    <!-- Post -->
-                    <div class="post clearfix">
-                      <span class="username">
-                        <h3>Residência</h3>
-                      </span>
-                      <p>
-                        <span>Cidade: 99999999999</span><br />
-                        <span>Bairro: 99999999999</span><br />
-                        <span>Rua: 99999999999</span><br />
-                        <span>Nº Casa: 99999999999</span><br />
-                        <span>Ponto de referencia: 99999999999</span><br />
-                        <span>Endereço: 99999999999</span>
-                      </p>
-                    </div>
-                    <!-- /.post -->
-                  </div>
                   <!-- /.tab-pane -->
-                  <div class="tab-pane" id="timeline">
+                  <div class="active tab-pane" id="timeline">
                     <!-- The timeline -->
                     <div class="timeline timeline-inverse">
                       <div class="card">
@@ -251,66 +126,43 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                          <table
-                            id="example1"
-                            class="table table-bordered table-striped"
-                          >
-                            <thead>
-                              <tr>
-                                <th>Disciplina</th>
-                                <th>Média 1º T</th>
-                                <th>Média 2º T</th>
-                                <th>Média 3º T</th>
-                                <th>Media final</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>Física</td>
-                                <td>12</td>
-                                <td>12</td>
-                                <td>20</td>
-                                <td>12</td>
-                              </tr>
-                              <tr>
-                                <td>Matemática</td>
-                                <td>20</td>
-                                <td>15</td>
-                                <td>15.5</td>
-                                <td>16</td>
-                              </tr>
-                              <tr>
-                                <td>Historia</td>
-                                <td>20</td>
-                                <td>15</td>
-                                <td>15.5</td>
-                                <td>16</td>
-                              </tr>
-                              <tr>
-                                <td>E.M.C</td>
-                                <td>20</td>
-                                <td>15</td>
-                                <td>15.5</td>
-                                <td>16</td>
-                              </tr>
-                              <tr>
-                                <td>Língua P</td>
-                                <td>20</td>
-                                <td>15</td>
-                                <td>15.5</td>
-                                <td>16</td>
-                              </tr>
-                            </tbody>
-                            <tfoot>
-                              <tr>
-                                <th>Disciplina</th>
-                                <th>Média 1º T</th>
-                                <th>Média 2º T</th>
-                                <th>Média 3º T</th>
-                                <th>Media final</th>
-                              </tr>
-                            </tfoot>
-                          </table>
+                        <table class="table table-striped projects">
+            <thead>
+              <tr>
+                <th style="width: 15%">ID</th>
+                <th style="width: 15%">Aluno</th>
+                <th style="width: 15%">Ano lectivo</th>
+                <th style="width: 15%">Disciplina</th>
+                <th style="width: 15%">MT1</th>
+                <th style="width: 15%">MT2</th>
+                <th style="width: 15%">MT3</th>
+                <th style="width: 15%">MFD</th>
+                <th style="width: 15%">MAC</th>
+                <th style="width: 15%">NPP</th>
+                <th style="width: 15%">NPT</th>
+                <th style="width: 15%">MT</th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach ($aluno->notas as $nota)
+              <tr>
+                <td>{{ $nota->id }}</td>
+                <td>{{ $nota->aluno->nome_completo }}</td>
+                <td>{{ $nota->anoLectivo->nome ?? 'N/A' }}</td>
+                <td>{{ $nota->disciplina->nome }}</td>
+                <td>{{ $nota->mt1 }}</td>
+                <td >{{ $nota->mt2 }}</td>
+                <td >{{ $nota->mt3 }}</td>
+                <td >{{ $nota->mfd }}</td>
+                <td>{{ $nota->mac }}</td>
+                <td >{{ $nota->npp }}</td>
+                <td >{{ $nota->npt }}</td>
+                <td >{{ $nota->mt }}</td>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
                         </div>
                         <!-- /.card-body -->
                       </div>

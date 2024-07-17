@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Aluno;
+use App\Models\Nota;
 use App\Models\Sala;
 use App\Models\Turma;
 
@@ -58,8 +59,10 @@ class AlunoController extends Controller
        // Exibir um aluno específico
        public function show($id)
        {
-           $aluno = Aluno::with(['turma', 'sala'])->findOrFail($id);
-           return view('utilizadores.aluno.veraluno', compact('aluno'));
+
+        $aluno = Aluno::with('notas')->findOrFail($id);
+
+        return view('utilizadores.aluno.veraluno', compact('aluno'));
        }
 
        // Mostrar o formulário de edição

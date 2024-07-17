@@ -23,7 +23,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Informação Sobre o sistema</h3>
+          <h3 class="card-title">CEPM - Complexo Escolar Privado Mivalepa</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -36,10 +36,10 @@
         </div>
         <div class="card-body p-0">
         
-            <h1 class="text-center">Informação sistema</h1>
+            <h1 class="text-center">Sistema de Gerenciamento de Notas</h1>
             
               <p style="padding-left: 50px;">
-            Informação Sobre o sistema---- Ajudar td
+              Em construção. Dirija-se a nossa instituição
           </p>
           
         </div>

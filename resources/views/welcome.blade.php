@@ -21,7 +21,7 @@
  <section class="content">
   <div class="container-fluid">
     <!-- Info boxes -->
-
+    @if(Auth::user()->usertype == 'admin')
     <div class="row">
       <div class="col-lg-3 col-6">
         <!-- small box -->
@@ -83,7 +83,7 @@
       <!-- ./col -->
     </div>
     <!-- /.row 1-->
-
+    @endif
 
      <div class="row">
       <div class="col-md-12">
